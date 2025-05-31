@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-4.png">
 <meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-5.png">
 <meta property="article:published_time" content="2024-10-22T07:44:53.000Z">
-<meta property="article:modified_time" content="2025-05-31T06:09:42.147Z">
+<meta property="article:modified_time" content="2025-05-31T07:56:40.368Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image.png">
@@ -133,7 +133,7 @@ MathJax = {
 <p>计算公式如下：</p>
 <p><img src="image-2.png" alt="alt text"></p>
 <p>这些expert是固定激活的，不参与路由的选择，因此相应的，为了维持计算成本，将会将其余的expert的激活数减少，有多少个shared expert，就会减少相应数量的常规expert。</p>
-<h2 id="负载均衡问题"><a href="#负载均衡问题" class="headerlink" title="负载均衡问题"></a>负载均衡问题</h2><p>这个在<a target="_blank" rel="noopener" href="https://helloyutao.top:36993/references/algorithms/moe/index.html#problems">moe problems</a>提到了，也就是路由网络过分选择某几个专家，造成路由崩溃，同时如果专家分布在多个设备上，会因为负载不均衡产生计算瓶颈。</p>
+<h2 id="负载均衡问题"><a href="#负载均衡问题" class="headerlink" title="负载均衡问题"></a>负载均衡问题</h2><p>这个在<a href="../../algorithms/moe/readme.html#problems">moe problems</a>提到了，也就是路由网络过分选择某几个专家，造成路由崩溃，同时如果专家分布在多个设备上，会因为负载不均衡产生计算瓶颈。</p>
 <p>解决方法：</p>
 <p>专家级平衡损失，用来解决某些expert分配的任务量过多，而有些闲置的问题导致的负载不均衡</p>
 <p><img src="image-3.png" alt="alt text"></p>

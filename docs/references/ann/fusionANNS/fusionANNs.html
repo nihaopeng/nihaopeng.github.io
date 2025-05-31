@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://nihaopeng.github.io/docs/references/ann/fusionANNS/QQ20241204-233713.png">
 <meta property="og:image" content="https://nihaopeng.github.io/docs/references/ann/fusionANNS/QQ20241204-235737.png">
 <meta property="article:published_time" content="2024-10-22T07:44:53.000Z">
-<meta property="article:modified_time" content="2025-05-31T06:09:26.736Z">
+<meta property="article:modified_time" content="2025-05-31T07:53:43.822Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nihaopeng.github.io/docs/references/ann/fusionANNS/QQ20241203-152351.png">
@@ -119,7 +119,7 @@ MathJax = {
 <p>提到的IVF（inverted file），是直接对所有的向量进行聚类，然后将查询向量同聚类中心计算距离，取最近的前topk个簇，然后遍历计算簇下面的向量。</p>
 </blockquote>
 <p>文章认为IVF占用了大量的内存资源，同时PQ是一种有损压缩，准确率不高。而如果直接使用gpu加速基于IVF的SPANN，性能甚至比原来下降10%，根本原因是数据的大量迁移。</p>
-<h2 id="ANN"><a href="#ANN" class="headerlink" title="ANN"></a>ANN</h2><p>关于ANN的知识点详见<a href="../../algorithms/ann/ann.md">ANN</a></p>
+<h2 id="ANN"><a href="#ANN" class="headerlink" title="ANN"></a>ANN</h2><p>关于ANN的知识点详见<a href="../../algorithms/ann/ann.html">ANN</a></p>
 <p>ANN中有三种常见的方法，kd树，在论文中称为分层索引；乘积量化，结合矢量量化使用；局部敏感hash；论文中还提到了使用GPU加速技术，但将这些方法集和起来使用发现比微软的SPANN性能要差。</p>
 <div style="text-align:center;"><img src="./QQ20241204-200225.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
 
