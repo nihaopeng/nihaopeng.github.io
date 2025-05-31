@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="外设虚拟抽象 协议所有的外设均是经过简化的设备，对于现实设备不具备参考价值，我们自定义了大量的控制寄存器与数据寄存器等。  bios  说明   pc寄存器初始为0，程序将从bios的0地址开始执行。  地址空间   0x00000000-0x00100000    ram  说明   可扩展内存控制器，需要注意某些耦合设备实现，例如ram等。  地址空间   0x00100000-0x10100">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%A4%96%E8%AE%BE/README.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="外设虚拟抽象 协议所有的外设均是经过简化的设备，对于现实设备不具备参考价值，我们自定义了大量的控制寄存器与数据寄存器等。  bios  说明   pc寄存器初始为0，程序将从bios的0地址开始执行。  地址空间   0x00000000-0x00100000    ram  说明   可扩展内存控制器，需要注意某些耦合设备实现，例如ram等。  地址空间   0x00100000-0x10100">
+<meta property="og:locale">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%A4%96%E8%AE%BE/image.png">
+<meta property="article:published_time" content="2025-05-31T02:50:46.069Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:46.069Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%A4%96%E8%AE%BE/image.png">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%A4%96%E8%AE%BE/README.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:46.069Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="外设"><a href="#外设" class="headerlink" title="外设"></a>外设</h1><h2 id="虚拟抽象"><a href="#虚拟抽象" class="headerlink" title="虚拟抽象"></a>虚拟抽象</h2><p><img src="image.png" alt="alt text"></p>
+<h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p>所有的外设均是经过简化的设备，对于现实设备不具备参考价值，我们自定义了大量的控制寄存器与数据寄存器等。</p>
+<ul>
+<li><p>bios</p>
+<ul>
+<li><p>说明</p>
+<p>  pc寄存器初始为0，程序将从bios的0地址开始执行。</p>
+</li>
+<li><p>地址空间</p>
+<p>  0x00000000-0x00100000</p>
+</li>
+</ul>
+</li>
+<li><p>ram</p>
+<ul>
+<li><p>说明</p>
+<p>  可扩展内存控制器，需要注意某些耦合设备实现，例如ram等。</p>
+</li>
+<li><p>地址空间</p>
+<p>  0x00100000-0x10100000</p>
+</li>
+</ul>
+</li>
+<li><p>keyboard</p>
+<ul>
+<li><p>地址空间</p>
+<p>  0x10100000-0x10200000</p>
+</li>
+<li><p>driver</p>
+<p>  键盘按下时产生中断，0x10100000地址处将会存储三个字符缓存。</p>
+</li>
+</ul>
+</li>
+<li><p>screen（字符输出设备）</p>
+<ul>
+<li><p>地址空间</p>
+<p>  0x10200000-0x20200000</p>
+</li>
+<li><p>driver</p>
+<p>  0x10200003写入1时触发输出，screen设备将会将0x10200004后的字符输出到宿主机终端。</p>
+</li>
+</ul>
+</li>
+<li><p>gpu</p>
+<ul>
+<li><p>说明</p>
+<p>  gpu设备并不具备通用并行计算能力，但是可以扩展，绘图功能被限制，也可以扩展</p>
+<p>  该设备贴图时为了性能需求，将会直接从flash读取文件内容，这与文件系统强绑定。</p>
+</li>
+<li><p>地址空间</p>
+<p>  0x20200000-0x30200000</p>
+</li>
+<li><p>driver</p>
+<p>  0x20200000为控制寄存器地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>写入信号</th>
+<th>对应功能</th>
+<th>数据寄存器功能与地址偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>绘制文字</td>
+<td>4:x;8:y;12:r;16:g;20:b;24:font_size</td>
+</tr>
+<tr>
+<td>2</td>
+<td>绘制三角形</td>
+<td>4:x0;8:y0;12:x1;16:y1;20:x2;24:y2;28:r;32:g;36:b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>刷新屏幕</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>绘制jpg</td>
+<td>4:x;8:y;12:image_file_size;16:inode_id</td>
+</tr>
+<tr>
+<td>5</td>
+<td>绘制png</td>
+<td>4:x;8:y;12:image_file_size;16:inode_id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>nic</p>
+<ul>
+<li><p>说明</p>
+<p>  该设备可以理解为对socket的简化封装，也可以自己实现完整的计算机网络体系结构内容得到更高的网络带宽。</p>
+<p>  nic设备采用dma，直接操作ram。</p>
+</li>
+<li><p>地址空间</p>
+<p>  0x30200000-0x40200000</p>
+</li>
+<li><p>drivers</p>
+<p>  0x30200000为控制寄存器地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>写入信号</th>
+<th>对应功能</th>
+<th>数据寄存器功能与地址偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>accept</td>
+<td>0-16:ip;20:port;24:protocol;28:return sockfd</td>
+</tr>
+<tr>
+<td>2</td>
+<td>send</td>
+<td>4:sockfd;8:send_data_ram_addr;12:data_len</td>
+</tr>
+<tr>
+<td>3</td>
+<td>recv</td>
+<td>4:sockfd;8:send_data_ram_addr;12:data_len</td>
+</tr>
+<tr>
+<td>4</td>
+<td>connect</td>
+<td>0-16:ip;20:port;24:protocol;28:return sockfd</td>
+</tr>
+<tr>
+<td>5</td>
+<td>close</td>
+<td>4:sockfd</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>flash</p>
+<ul>
+<li><p>地址空间</p>
+<p>  0x40200000-0x60200000</p>
+</li>
+</ul>
+</li>
+<li><p>pmc</p>
+<ul>
+<li><p>地址空间</p>
+<p>  0x60200000-0x60300000</p>
+</li>
+<li><p>driver</p>
+<p>  0x60200000为控制寄存器，向该地址写入任何信号都会触发关机。</p>
+</li>
+</ul>
+</li>
+<li><p>monitor</p>
+<ul>
+<li><p>地址空间</p>
+<p>  0x60300000-0x60400000</p>
+</li>
+<li><p>drivers</p>
+<p>  0x60300000为控制寄存器地址</p>
+<p>  当向控制寄存器地址写入1时触发监测器的启动，此时开始进行性能数据的采集。</p>
+<p>  写入1后写入0，将会触发监测器的关闭，并将数据存储至宿主机。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%A4%96%E8%AE%BE/README.html" data-id="cmbbw5lps0010tsug9kvsf9rc" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

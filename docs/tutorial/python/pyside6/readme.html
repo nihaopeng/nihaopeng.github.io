@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="pyside6 开发安装pip install pyside6 打开pyside-designerpyside6-designer ui转python代码pyside6-uic untitled.ui &gt; widget.py 实例化ui123456789101112131415161718192021class MainWindow(QMainWindow):    def __init__">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/tutorial/python/pyside6/readme.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="pyside6 开发安装pip install pyside6 打开pyside-designerpyside6-designer ui转python代码pyside6-uic untitled.ui &gt; widget.py 实例化ui123456789101112131415161718192021class MainWindow(QMainWindow):    def __init__">
+<meta property="og:locale">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/python/pyside6/image.png">
+<meta property="article:published_time" content="2025-05-31T02:50:27.842Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:27.842Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nihaopeng.github.io/docs/tutorial/python/pyside6/image.png">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/tutorial/python/pyside6/readme.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:27.842Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="pyside6-开发"><a href="#pyside6-开发" class="headerlink" title="pyside6 开发"></a>pyside6 开发</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>pip install pyside6</code></p>
+<h2 id="打开pyside-designer"><a href="#打开pyside-designer" class="headerlink" title="打开pyside-designer"></a>打开pyside-designer</h2><p><code>pyside6-designer</code></p>
+<h2 id="ui转python代码"><a href="#ui转python代码" class="headerlink" title="ui转python代码"></a>ui转python代码</h2><p><code>pyside6-uic untitled.ui &gt; widget.py</code></p>
+<h2 id="实例化ui"><a href="#实例化ui" class="headerlink" title="实例化ui"></a>实例化ui</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MainWindow</span>(<span class="title class_ inherited__">QMainWindow</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MainWindow, <span class="variable language_">self</span>).__init__()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建 UI 实例并设置到当前窗口</span></span><br><span class="line">        <span class="variable language_">self</span>.ui = Ui_MainWindow()<span class="comment">#这个Ui_MainWindow就是我们创建的ui</span></span><br><span class="line">        <span class="variable language_">self</span>.ui.setupUi(<span class="variable language_">self</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 添加自定义逻辑</span></span><br><span class="line">        <span class="variable language_">self</span>.ui.pushButton.clicked.connect(<span class="variable language_">self</span>.on_button_clicked)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">on_button_clicked</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;按钮被点击了！&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app=QApplication(sys.argv)</span><br><span class="line"></span><br><span class="line">    mainWindow=MainWindow()</span><br><span class="line"></span><br><span class="line">    mainWindow.show()</span><br><span class="line"></span><br><span class="line">    app.<span class="built_in">exec</span>()</span><br></pre></td></tr></table></figure>
+<h2 id="创建托盘-创建菜单"><a href="#创建托盘-创建菜单" class="headerlink" title="创建托盘(创建菜单)"></a>创建托盘(创建菜单)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建系统托盘图标</span></span><br><span class="line"><span class="variable language_">self</span>.tray_icon = QSystemTrayIcon(<span class="variable language_">self</span>)</span><br><span class="line"><span class="variable language_">self</span>.tray_icon.setIcon(QIcon(<span class="string">&quot;icon.png&quot;</span>))  <span class="comment"># 设置托盘图标，替换为你的图标路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建托盘菜单</span></span><br><span class="line"><span class="variable language_">self</span>.tray_menu = QMenu()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加显示窗口选项</span></span><br><span class="line">show_action = QAction(<span class="string">&quot;Show Window&quot;</span>, <span class="variable language_">self</span>)</span><br><span class="line">show_action.triggered.connect(<span class="variable language_">self</span>.show_window)</span><br><span class="line"><span class="variable language_">self</span>.tray_menu.addAction(show_action)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加退出选项</span></span><br><span class="line">exit_action = QAction(<span class="string">&quot;Exit&quot;</span>, <span class="variable language_">self</span>)</span><br><span class="line">exit_action.triggered.connect(<span class="variable language_">self</span>.close_application)</span><br><span class="line"><span class="variable language_">self</span>.tray_menu.addAction(exit_action)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将菜单绑定到托盘图标</span></span><br><span class="line"><span class="variable language_">self</span>.tray_icon.setContextMenu(<span class="variable language_">self</span>.tray_menu)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示托盘图标</span></span><br><span class="line"><span class="variable language_">self</span>.tray_icon.show()</span><br></pre></td></tr></table></figure>
+<h2 id="窗口属性"><a href="#窗口属性" class="headerlink" title="窗口属性"></a>窗口属性</h2><ul>
+<li>窗口置底</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">self</span>.setWindowFlags(Qt.WindowStaysOnBottomHint)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>窗口无边框化</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">self</span>.setWindowFlags(Qt.FramelessWindowHint)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>隐藏任务栏图标</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">self</span>.setWindowFlags(Qt.Tool)</span><br></pre></td></tr></table></figure>
+<h2 id="动态插入子部件"><a href="#动态插入子部件" class="headerlink" title="动态插入子部件"></a>动态插入子部件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new_todo=Todo(<span class="variable language_">self</span>)</span><br><span class="line">new_todo.setText(text)</span><br><span class="line"><span class="variable language_">self</span>.ui.lineEdit.clear()</span><br><span class="line"><span class="variable language_">self</span>.ui.scrollVLayout.insertWidget(<span class="number">1</span>,new_todo)</span><br></pre></td></tr></table></figure>
+<h2 id="背景窗口圆角"><a href="#背景窗口圆角" class="headerlink" title="背景窗口圆角"></a>背景窗口圆角</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self, event</span>):</span><br><span class="line">        <span class="comment"># 创建一个 QPainter 对象并指定绘制设备为当前窗口</span></span><br><span class="line">        painter = QPainter(<span class="variable language_">self</span>)</span><br><span class="line">        <span class="comment"># 设置绘制选项为反锯齿，使绘制的图形边缘更加平滑</span></span><br><span class="line">        painter.setRenderHint(QPainter.RenderHint.Antialiasing)</span><br><span class="line">        <span class="comment"># 设置画刷颜色为白色</span></span><br><span class="line">        painter.setBrush(QBrush(QColor(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)))</span><br><span class="line">        <span class="comment"># 设置画笔颜色为透明，即不绘制边框线</span></span><br><span class="line">        painter.setPen(Qt.GlobalColor.transparent)</span><br><span class="line">        <span class="comment"># 获取当前窗口的矩形区域</span></span><br><span class="line">        rect = <span class="variable language_">self</span>.rect()</span><br><span class="line">        <span class="comment"># 绘制圆角矩形，圆角半径为 15</span></span><br><span class="line">        painter.drawRoundedRect(rect, <span class="number">15</span>, <span class="number">15</span>)</span><br><span class="line">        <span class="string">&quot;&quot;&quot; 通过遮罩设置窗口为圆角矩形 &quot;&quot;&quot;</span></span><br><span class="line">        path = QPainterPath()</span><br><span class="line">        rect = QRect(<span class="number">0</span>, <span class="number">0</span>, <span class="variable language_">self</span>.width(), <span class="variable language_">self</span>.height())</span><br><span class="line">        radius = <span class="number">15</span>  <span class="comment"># 圆角半径</span></span><br><span class="line">        path.addRoundedRect(rect, radius, radius)</span><br><span class="line">        <span class="comment"># 使用 QRegion 进行裁剪</span></span><br><span class="line">        region = QRegion(path.toFillPolygon().toPolygon())</span><br><span class="line">        <span class="variable language_">self</span>.setMask(region)</span><br></pre></td></tr></table></figure>
+<p>不设置遮罩将会出现四个黑角，反正通用框架基于系统的窗口管理器必定出现许多问题</p>
+<h2 id="QCharts"><a href="#QCharts" class="headerlink" title="QCharts"></a>QCharts</h2><p>太杂了，不太好说</p>
+<h2 id="QSS"><a href="#QSS" class="headerlink" title="QSS"></a>QSS</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QPushButton &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#4CAF50</span>;  <span class="comment">/* 设置按钮背景颜色 */</span></span><br><span class="line">    <span class="attribute">color</span>: white;  <span class="comment">/* 设置按钮文本颜色 */</span></span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line">QPushButton<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#45a049</span>;  <span class="comment">/* 设置按钮悬停时的背景颜色 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="弹出输入框"><a href="#弹出输入框" class="headerlink" title="弹出输入框"></a>弹出输入框</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个 QInputDialog</span></span><br><span class="line">        input_dialog = QInputDialog(<span class="variable language_">self</span>)</span><br><span class="line">        input_dialog.setWindowTitle(<span class="string">&quot;修改文本&quot;</span>)</span><br><span class="line">        input_dialog.setLabelText(<span class="string">&quot;请输入新的文本：&quot;</span>)</span><br><span class="line">        input_dialog.setTextValue(<span class="variable language_">self</span>.text())  <span class="comment"># 设置默认值为当前文本</span></span><br><span class="line">        <span class="comment"># 显示对话框并获取用户输入</span></span><br><span class="line">        <span class="keyword">if</span> input_dialog.<span class="built_in">exec</span>() == QInputDialog.Accepted:</span><br><span class="line">            new_text = input_dialog.textValue()</span><br><span class="line">            <span class="keyword">if</span> new_text:</span><br><span class="line">                <span class="variable language_">self</span>.setText(new_text)</span><br></pre></td></tr></table></figure>
+<h2 id="本文设置删除线"><a href="#本文设置删除线" class="headerlink" title="本文设置删除线"></a>本文设置删除线</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">setStrike</span>(<span class="params">self,ifstrikeout:<span class="built_in">bool</span></span>):</span><br><span class="line">    font = <span class="variable language_">self</span>.font()</span><br><span class="line">    font.setStrikeOut(ifstrikeout)  <span class="comment"># 移除删除线</span></span><br><span class="line">    <span class="variable language_">self</span>.setFont(font)</span><br></pre></td></tr></table></figure>
+<h2 id="将窗口嵌入桌面"><a href="#将窗口嵌入桌面" class="headerlink" title="将窗口嵌入桌面"></a>将窗口嵌入桌面</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">set_desktop_window</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="comment"># 获取桌面窗口的句柄</span></span><br><span class="line">    hwnd = ctypes.windll.user32.FindWindowW(<span class="string">&quot;Progman&quot;</span>, <span class="string">&quot;Program Manager&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> hwnd:</span><br><span class="line">        <span class="comment"># print(&quot;setdesktopparent&quot;)</span></span><br><span class="line">        <span class="comment"># 获取当前窗口的句柄</span></span><br><span class="line">        win_hwnd = <span class="variable language_">self</span>.window.winId()</span><br><span class="line">        <span class="comment"># 将当前窗口设置为桌面窗口的子窗口</span></span><br><span class="line">        ctypes.windll.user32.SetParent(win_hwnd, hwnd)</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，嵌入桌面后，如果使用setStyleSheet(“background: transparent;”)，背景将会变为纯黑（windows，预估是windows窗口管理器搞的鬼）</p>
+<p>如果setAttribute(Qt.WA_TranslucentBackground),窗口上的空间将不再发生变化（难蚌）</p>
+<p>解决！！！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">查找到program manager窗口的句柄</span><br><span class="line">progman_hwnd = ctypes.windll.user32.FindWindowW(<span class="string">&quot;Progman&quot;</span>, <span class="string">&quot;Program Manager&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> progman_hwnd:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Failed to find Progman window&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"><span class="comment"># 2. 发送 0x52C 消息，触发桌面窗口重新排列</span></span><br><span class="line">ctypes.windll.user32.SendMessageW(progman_hwnd, <span class="number">0x52C</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 3. 查找 WorkerW 窗口</span></span><br><span class="line"><span class="variable language_">self</span>.workerw_hwnd = ctypes.c_int(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">enum_windows_callback</span>(<span class="params">hwnd, lParam</span>):</span><br><span class="line">    <span class="comment"># 查找 WorkerW 窗口</span></span><br><span class="line">    <span class="keyword">if</span> ctypes.windll.user32.FindWindowExW(hwnd, <span class="literal">None</span>, <span class="string">&quot;SHELLDLL_DefView&quot;</span>, <span class="literal">None</span>):</span><br><span class="line">        <span class="comment"># self.workerw_hwnd = ctypes.windll.user32.FindWindowExW(None, hwnd, &quot;WorkerW&quot;, None)</span></span><br><span class="line">        <span class="variable language_">self</span>.workerw_hwnd=hwnd</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="comment"># 将 Python 回调函数转换为 C 回调函数</span></span><br><span class="line"><span class="comment"># 定义回调函数类型</span></span><br><span class="line">WNDENUMPROC = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))</span><br><span class="line">enum_windows_proc = WNDENUMPROC(enum_windows_callback)</span><br><span class="line"><span class="comment"># 枚举所有窗口</span></span><br><span class="line">ctypes.windll.user32.EnumWindows(enum_windows_proc, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="variable language_">self</span>.workerw_hwnd:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Failed to find WorkerW window&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"><span class="comment"># 4. 将当前窗口设置为 WorkerW 的子窗口</span></span><br><span class="line">win_hwnd = <span class="variable language_">self</span>.window.winId()</span><br><span class="line">ctypes.windll.user32.SetParent(win_hwnd, <span class="variable language_">self</span>.workerw_hwnd)</span><br><span class="line"><span class="comment"># 5. 确保窗口可见</span></span><br><span class="line">ctypes.windll.user32.ShowWindow(win_hwnd, <span class="number">1</span>)  <span class="comment"># SW_SHOWNORMAL</span></span><br></pre></td></tr></table></figure></p>
+<p>最根本的问题在于，有部分设备的program manager与worker是分离的，其中一个worker是管理桌面图标的，另一个worker是透明背景，而program manager是桌面总窗口。</p>
+<p>如下的spy视图</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>我们之前是将我们的窗口加入program manager，这会造成worker的层级在我们窗口之上，我们的就被挡住了，现在我们先向program manager发送0x52c将program manager拆出workerw，此时将我们的窗口作为workerw的子窗口，注意，需要时包含shelldlldelview的workerw，否则也会被遮挡。如果想做桌面壁纸，那就将窗口作为另一个worker的子窗口。添柴！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/tutorial/python/pyside6/readme.html" data-id="cmbbw5lpq000rtsug0f6ohjcy" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

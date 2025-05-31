@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="cmake相关指令功能set功能：设置变量 用法： 1,一般变量 set(normal &quot;normalValue&quot;) 2,缓存变量 12345678set(MY_VARIABLE &quot;Hello, World!&quot; CACHE STRING &quot;A greeting message&quot; FORCE)message(&quot;$&#123;MY_">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/tutorial/c++/cmake/README.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="cmake相关指令功能set功能：设置变量 用法： 1,一般变量 set(normal &quot;normalValue&quot;) 2,缓存变量 12345678set(MY_VARIABLE &quot;Hello, World!&quot; CACHE STRING &quot;A greeting message&quot; FORCE)message(&quot;$&#123;MY_">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-05-31T02:50:23.572Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:23.572Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/tutorial/c++/cmake/README.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:23.572Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h1><h2 id="相关指令功能"><a href="#相关指令功能" class="headerlink" title="相关指令功能"></a>相关指令功能</h2><h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>功能：设置变量</p>
+<p>用法：</p>
+<p>1,一般变量</p>
+<p><code>set(normal &quot;normalValue&quot;)</code></p>
+<p>2,缓存变量</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(MY_VARIABLE <span class="string">&quot;Hello, World!&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;A greeting message&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">message</span>(<span class="string">&quot;$&#123;MY_VARIABLE&#125;&quot;</span>)   <span class="comment"># 输出Hello, World!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(MY_VARIABLE <span class="string">&quot;Good Morning!&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;A greeting message&quot;</span>)</span><br><span class="line"><span class="keyword">message</span>(<span class="string">&quot;$&#123;MY_VARIABLE&#125;&quot;</span>)   <span class="comment"># 输出Hello, World!因为不加FORCE默认不覆盖</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(MY_VARIABLE <span class="string">&quot;Good Morning!&quot;</span> CACHE <span class="keyword">STRING</span> <span class="string">&quot;A greeting message&quot;</span> FORCE)</span><br><span class="line"><span class="keyword">message</span>(<span class="string">&quot;$&#123;MY_VARIABLE&#125;&quot;</span>)   <span class="comment"># 输出Good Morning! 加了FORCE强制覆盖</span></span><br></pre></td></tr></table></figure>
+<p>存储在CMakeCache当中，可以跨越多次编译，持久化存储。</p>
+<p>3,环境变量</p>
+<p><code>set(ENV&#123;&lt;variable&gt;&#125; [&lt;value&gt;])</code></p>
+<p><code>unset(ENV&#123;&lt;variable&gt;&#125;)</code></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置一个名为 MY_VARIABLE 的环境变量，其值为 Hello World：</span></span><br><span class="line"><span class="keyword">set</span>(ENV&#123;MY_VARIABLE&#125; <span class="string">&quot;Hello World&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>可以用于在不同cmakelist之间传递变量，但是不可持久化储存</p>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>1,READ</p>
+<p>读取文件（filename）的内容保存到变量（variable）中；</p>
+<p>file(READ config.cmake contents)</p>
+<p>2,STRINGS</p>
+<p>解析filename中的ASCII字符串列表，并将其存储在中。忽略文件中的二进制数据。忽略回车(\r, CR)字符；</p>
+<h3 id="execute-process"><a href="#execute-process" class="headerlink" title="execute_process"></a>execute_process</h3><p>通过execute_process方法可以执行多个子进程。</p>
+<p>命令COMMAND会并行执行，每个子进程的标准输出映射到下一个进程的标准输入上，所有进程共用standard error管道。</p>
+<p><code>execute_process(COMMAND rm -rf $&#123;ASCEND_AUTOGEN_PATH&#125;/$&#123;CUSTOM_COMPILE_OPTIONS&#125;
+                COMMAND touch $&#123;ASCEND_AUTOGEN_PATH&#125;/$&#123;CUSTOM_COMPILE_OPTIONS&#125;)</code></p>
+<h3 id="function"><a href="#function" class="headerlink" title="function"></a>function</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(&lt;name&gt; [&lt;arg1&gt; ...])</span><br><span class="line">  &lt;commands&gt;</span><br><span class="line"><span class="keyword">endfunction</span>([&lt;name&gt;])</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(get_system_info SYSTEM_INFO)</span><br><span class="line">  <span class="keyword">if</span> (UNIX)</span><br><span class="line">    <span class="keyword">execute_process</span>(<span class="keyword">COMMAND</span> grep -i ^id= /etc/os-release OUTPUT_VARIABLE TEMP)</span><br><span class="line">  <span class="keyword">elseif</span> (WIN32)</span><br><span class="line">    <span class="keyword">message</span>(STATUS <span class="string">&quot;System is Windows. Only for pre-build.&quot;</span>)</span><br><span class="line">  <span class="keyword">else</span> ()</span><br><span class="line">    <span class="keyword">message</span>(FATAL_ERROR <span class="string">&quot;$&#123;CMAKE_SYSTEM_NAME&#125; not support.&quot;</span>)</span><br><span class="line">  <span class="keyword">endif</span> ()</span><br><span class="line"><span class="keyword">endfunction</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>操作字符串</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/661283261">具体教程</a></p>
+<h3 id="lt-…-gt"><a href="#lt-…-gt" class="headerlink" title="$&lt;…&gt;"></a>$&lt;…&gt;</h3><p>1,检查变量 SOC_VERSION 的值是否在列表 CUSTOM_ASCEND310P_LIST 中</p>
+<p>2,将上一步的结果强制转换为布尔类型（0 或 1）</p>
+<p>3,如果条件为 True，则返回值 CUSTOM_ASCEND310P；否则不返回任何内容。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ascendc_compile_definitions(ascendc_kernels_<span class="variable">$&#123;RUN_MODE&#125;</span> PRIVATE</span><br><span class="line">    $&lt;$&lt;BOOL:$&lt;<span class="keyword">IN_LIST</span>:<span class="variable">$&#123;SOC_VERSION&#125;</span>,<span class="variable">$&#123;CUSTOM_ASCEND310P_LIST&#125;</span>&gt;&gt;:CUSTOM_ASCEND310P&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="get-filename-component"><a href="#get-filename-component" class="headerlink" title="get_filename_component"></a>get_filename_component</h3><p>get_filename_component 函数用于获取文件名或目录的各个部分，如文件名、扩展名、目录等。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">get_filename_component</span>(filename <span class="variable">$&#123;filepath&#125;</span> NAME)</span><br><span class="line"><span class="keyword">get_filename_component</span>(directory <span class="variable">$&#123;filepath&#125;</span> DIRECTORY)</span><br><span class="line"></span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;File Name: $&#123;filename&#125;&quot;</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;Directory: $&#123;directory&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="ExternalProject"><a href="#ExternalProject" class="headerlink" title="ExternalProject"></a>ExternalProject</h3><p>ExternalProject是CMake提供的另一个模块，用于在构建时下载、配置、构建和安装外部项目（即不是作为当前CMake项目一部分的项目）。</p>
+<p>ExternalProject模块通过以下主要步骤实现其功能：</p>
+<ol>
+<li>下载源代码：在构建过程中下载外部项目的源代码。可以指定URL、Git仓库、SVN仓库等多种来源。</li>
+<li>配置项目：对下载的外部项目进行配置，包括设置构建选项和参数。</li>
+<li>构建项目：构建外部项目，生成需要的二进制文件或库。</li>
+<li>安装项目：将构建的项目安装到指定位置，以便于主项目使用。</li>
+</ol>
+<p>基本步骤：</p>
+<ol>
+<li>引入ExternalProject模块：<br>在CMakeLists.txt文件中使用include(ExternalProject)命令来启用ExternalProject模块的功能。</li>
+<li>声明外部项目：<br>使用ExternalProject_Add函数声明一个外部项目，指定其源代码来源、配置选项、构建命令、安装位置等。</li>
+<li>配置依赖关系（可选）：<br>如果外部项目依赖于其他项目或特定的构建步骤，可以使用add_dependencies命令来配置这些依赖关系。</li>
+<li>使用安装的依赖：<br>一旦外部项目被构建和安装，其产物（如库、可执行文件等）就可以在主项目中被使用。</li>
+</ol>
+<h3 id="add-library"><a href="#add-library" class="headerlink" title="add_library"></a>add_library</h3><p>编译生成库文件</p>
+<h3 id="target-compile-options"><a href="#target-compile-options" class="headerlink" title="target_compile_options"></a>target_compile_options</h3><p>target_compile_options 指令用于为指定的目标添加编译器选项。通过这些选项，可以影响编译器如何处理目标的源代码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/tutorial/c++/cmake/README.html" data-id="cmbbw5lpq000otsug65jo9leb" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="算子开发教程教程 cann架构 cann类似于cuda，因此底层都是基于bisheng&#x2F;nvcc编译器的。 算子是通过bisheng编译成动态库的。 硬件架构  AI Core负责执行标量、向量和张量相关的计算密集型算子，包括三种基础计算单元：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，同时还包含存储单元（包括硬件存储和用于数据搬运的搬运单元）和控制单元。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/readme.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="算子开发教程教程 cann架构 cann类似于cuda，因此底层都是基于bisheng&#x2F;nvcc编译器的。 算子是通过bisheng编译成动态库的。 硬件架构  AI Core负责执行标量、向量和张量相关的计算密集型算子，包括三种基础计算单元：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，同时还包含存储单元（包括硬件存储和用于数据搬运的搬运单元）和控制单元。">
+<meta property="og:locale">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-1.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-2.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-3.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-4.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-5.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-6.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-7.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-8.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-12.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-13.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-15.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-14.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-9.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-10.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image-11.png">
+<meta property="article:published_time" content="2025-05-31T02:50:25.655Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:25.655Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/image.png">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/tutorial/ascend/mindspore_develop/readme.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:25.655Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="算子开发教程"><a href="#算子开发教程" class="headerlink" title="算子开发教程"></a>算子开发教程</h1><p><a target="_blank" rel="noopener" href="https://www.hiascend.com/edu/courses?activeTab=%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91">教程</a></p>
+<h2 id="cann架构"><a href="#cann架构" class="headerlink" title="cann架构"></a>cann架构</h2><p><img src="image.png" alt="alt text"></p>
+<p>cann类似于cuda，因此底层都是基于bisheng/nvcc编译器的。</p>
+<p>算子是通过bisheng编译成动态库的。</p>
+<h2 id="硬件架构"><a href="#硬件架构" class="headerlink" title="硬件架构"></a>硬件架构</h2><p><img src="image-1.png" alt="alt text"></p>
+<blockquote>
+<p>AI Core负责执行标量、向量和张量相关的计算密集型算子，包括三种基础计算单元：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，同时还包含存储单元（包括硬件存储和用于数据搬运的搬运单元）和控制单元。</p>
+</blockquote>
+<ul>
+<li>耦合架构</li>
+</ul>
+<p><img src="image-2.png" alt="alt text"></p>
+<ul>
+<li>分离架构</li>
+</ul>
+<p><img src="image-3.png" alt="alt text"></p>
+<blockquote>
+<p>在AI Core中，输入缓冲区之后设置了一个存储转换单元（Memory Transfer Unit，MTE）。这是达芬奇架构的特色之一，主要的目的是为了以极高的效率实现数据格式的转换。比如前面提到GPU要通过矩阵计算来实现卷积，首先要通过Im2Col的方法把输入的网络和特征数据重新以一定的格式排列起来。这一步在GPU当中是通过软件来实现的，效率比较低下。达芬奇架构采用了一个专用的存储转换单元来完成这一过程，将这一步完全固化在硬件电路中，可以在很短的时间之内完成整个转置过程。</p>
+</blockquote>
+<p>这样看，专用硬件上的卷积加速算是走到头了，欸</p>
+<h2 id="bisheng-Test"><a href="#bisheng-Test" class="headerlink" title="bisheng Test"></a>bisheng Test</h2><p>测试代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件名QuickStartDemo.cce</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;acl/acl.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> ASCENDC_CPU_DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __aicore__</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __aicore__ [aicore]</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BLOCKS 4</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CACHELINE_SZ 64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Define a kernel</span></span><br><span class="line">__global__ __aicore__ <span class="type">void</span> <span class="title function_">foo</span><span class="params">(__gm__ <span class="type">uint8_t</span> *Out, <span class="type">int</span> Stride)</span> &#123;</span><br><span class="line">    Out[block_idx * Stride] = block_idx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">    aclInit(nullptr);</span><br><span class="line">    aclrtSetDevice(<span class="number">0</span>);</span><br><span class="line">    aclrtStream stream;</span><br><span class="line">    aclrtCreateStream(&amp;stream);</span><br><span class="line"></span><br><span class="line">    <span class="type">uint8_t</span> ExpectedValue[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="type">uint8_t</span> *OutputValue = nullptr;</span><br><span class="line">    aclrtMalloc((<span class="type">void</span> **)&amp;OutputValue, BLOCKS, ACL_MEM_MALLOC_HUGE_FIRST);</span><br><span class="line"></span><br><span class="line">    <span class="type">uint8_t</span> InitValue[BLOCKS] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    aclrtMemcpyAsync((<span class="type">void</span> *)OutputValue, <span class="keyword">sizeof</span>(InitValue), InitValue,</span><br><span class="line">                     <span class="keyword">sizeof</span>(InitValue), ACL_MEMCPY_HOST_TO_DEVICE, stream);</span><br><span class="line">    aclrtSynchronizeStream(stream);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Invoke a kernel</span></span><br><span class="line">    foo&lt;&lt;&lt;BLOCKS, nullptr, stream&gt;&gt;&gt;(OutputValue, CACHELINE_SZ);</span><br><span class="line"></span><br><span class="line">    <span class="type">uint8_t</span> *OutHost = nullptr;</span><br><span class="line">    aclrtMallocHost((<span class="type">void</span> **)&amp;OutHost, BLOCKS * CACHELINE_SZ);</span><br><span class="line">    aclrtMemcpyAsync(OutHost, BLOCKS * CACHELINE_SZ, OutputValue,</span><br><span class="line">                     BLOCKS * CACHELINE_SZ, ACL_MEMCPY_DEVICE_TO_HOST, stream);</span><br><span class="line">    aclrtSynchronizeStream(stream);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> I = <span class="number">0</span>; I &lt; <span class="keyword">sizeof</span>(ExpectedValue) / <span class="keyword">sizeof</span>(<span class="type">uint8_t</span>); I++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;i%d\t Expect: 0x%04x\t\t\t\tResult: 0x%04x\n&quot;</span>, I, ExpectedValue[I],</span><br><span class="line">                OutHost[I * CACHELINE_SZ]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    aclrtFreeHost(OutHost);</span><br><span class="line">    aclrtFree(OutputValue);</span><br><span class="line"></span><br><span class="line">    aclrtDestroyStream(stream);</span><br><span class="line">    aclrtResetDevice(<span class="number">0</span>);</span><br><span class="line">    aclFinalize();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果你对上面直接使用</p>
+<p><code>bisheng -O2 --cce-soc-version=AscendXXXYY --cce-soc-core-type=VecCore  -I$RT_INC -L$RT_LIB -lascendcl -lruntime QuickStartDemo.cce  -o QuickStartDemo</code></p>
+<p>会告诉你架构不支持Ascend910B</p>
+<p>但是，如果使用官方提供的脚本是可以编译通过的，那我们知道官方示例代码中存在异构代码，因此不可能使用gnu标准的gcc编译器，只有可能使用bisheng。</p>
+<p>那我们通过编译官方示例，并查看对应的异构代码的编译命令</p>
+<p>进入build目录执行</p>
+<p><code>make VERBOSE=1 | grep add_custom.cpp</code></p>
+<p><img src="image-4.png" alt="alt text"></p>
+<p>找到编译器实际路径，我们再使用该路径编译器编译代码</p>
+<p>还是架构不支持</p>
+<p>测试以下编译指令</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cc1:=/usr/local/Ascend/ascend-toolkit/latest/compiler/ccec_compiler/bin/bisheng</span><br><span class="line">cc2:=/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/bisheng</span><br><span class="line"></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	<span class="variable">$(cc2)</span> \</span><br><span class="line">	-I/usr/local/Ascend/ascend-toolkit/latest/runtime/<span class="keyword">include</span> \</span><br><span class="line">	-L/usr/local/Ascend/ascend-toolkit/latest/runtime/lib64 -g \</span><br><span class="line">	-O2 \</span><br><span class="line">	--cce-soc-version=Ascend310P1 --cce-soc-core-type=AICore \</span><br><span class="line">	-o QuickStartDemo.o \</span><br><span class="line">	QuickStartDemo.cce </span><br></pre></td></tr></table></figure>
+<p>使用310P1架构与AICore类型交叉编译，出现链接错误</p>
+<p><img src="image-5.png" alt="alt text"></p>
+<p>推测当前的编译器仅支持编译算子，并不支持编译为可执行文件（欸，懒得骂了）</p>
+<h2 id="kernel算子开发-矩阵乘"><a href="#kernel算子开发-矩阵乘" class="headerlink" title="kernel算子开发(矩阵乘)"></a>kernel算子开发(矩阵乘)</h2><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>clone算子example，然后执行sudo bash run.sh -r npu -v Ascend910B</p>
+<h3 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h3><p>对于矩阵乘，其运算api为<a target="_blank" rel="noopener" href="https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/800alpha001/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0016.html?sub_id=%2Fzh%2FCANNCommunityEdition%2F800alpha001%2Fapiref%2Fascendcopapi%2Fatlasascendc_api_07_0239.html#ZH-CN_TOPIC_0000002082776405__section8213173433312">Mmad</a>，但是要执行该操作，需要内存中的数据满足zz的格式。</p>
+<p><img src="image-6.png" alt="范式"></p>
+<p>上面是cube的运算流程，使用copyin，compute，copyout的运算流程，核函数中也遵循该流程。</p>
+<p>更详细的流程是，先将输入矩阵传入A1，B1，如下：<br><img src="image-7.png" alt="alt text"></p>
+<p>接着将矩阵分块后存入A2，B2，如下:<br><img src="image-8.png" alt="alt text"></p>
+<p>然后进行矩阵运算，<a target="_blank" rel="noopener" href="https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/800alpha001/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0016.html?sub_id=%2Fzh%2FCANNCommunityEdition%2F800alpha001%2Fapiref%2Fascendcopapi%2Fatlasascendc_api_07_0239.html#ZH-CN_TOPIC_0000002082776405__section8213173433312">Mmad</a>，再将结果输出到CO1，将分块后的结果融合成最终结果，然后存入CO1。</p>
+<p>A2与B2内数据格式如下：</p>
+<p><img src="image-12.png" alt="alt text"></p>
+<p>需要注意的是以上流程中的数据搬运都是通过队列排队实现，这样才能够实现流水线的效果。</p>
+<p><img src="image-13.png" alt="alt text"></p>
+<p>按照上图中的代码，即可实现流水，从逻辑上看，datacopy的工作必然由一个独立单元mte负责，mte与compute单元并行执行才能达到流水的目的。</p>
+<p>假证也可推理，即，如果上述代码是串行执行，那么没必要使用queue，直接使用转置后的数据即可。</p>
+<p>下面两图协同证明,datacopy任务指令序列在搬运单元中执行，搬运完后执行了setflag通知计算单元：<br><img src="image-15.png" alt="alt text"><br><img src="image-14.png" alt="alt text"></p>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><ul>
+<li>创建上下文</li>
+</ul>
+<p><img src="image-9.png" alt="alt text"></p>
+<ul>
+<li>分配设备空间</li>
+</ul>
+<p><img src="image-10.png" alt="alt text"></p>
+<ul>
+<li>调用内核函数</li>
+</ul>
+<p><img src="image-11.png" alt="alt text"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/readme.html" data-id="cmbbw5lpp000itsughbslax7q" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

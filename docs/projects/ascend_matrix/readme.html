@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="昇腾算子矩阵乘探究编写昇腾算子完成矩阵乘点击查看相关简介 使用add_custom算子验证流水线以及多缓冲原始数据.xlsx  !数据的长度限制在int32范围，因此我们采用2048*64*64*64为上限； !同时需要注意的是，cache的容量为65536，而输入数据的大小为int16，因此，一次add支持的长度为2048*16个int16  首先验证计算段远快于搬运段，同时证明流水我们仅仅需要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/readme.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="昇腾算子矩阵乘探究编写昇腾算子完成矩阵乘点击查看相关简介 使用add_custom算子验证流水线以及多缓冲原始数据.xlsx  !数据的长度限制在int32范围，因此我们采用2048*64*64*64为上限； !同时需要注意的是，cache的容量为65536，而输入数据的大小为int16，因此，一次add支持的长度为2048*16个int16  首先验证计算段远快于搬运段，同时证明流水我们仅仅需要">
+<meta property="og:locale">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-8.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-4.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-1.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-2.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-3.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-6.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-7.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-5.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/e06f146dd10f3b4bda45b86a43484302_720.jpg">
+<meta property="article:published_time" content="2025-05-31T02:50:17.369Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:17.369Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nihaopeng.github.io/docs/projects/ascend_matrix/image-8.png">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/projects/ascend_matrix/readme.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:17.369Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="昇腾算子矩阵乘探究"><a href="#昇腾算子矩阵乘探究" class="headerlink" title="昇腾算子矩阵乘探究"></a>昇腾算子矩阵乘探究</h1><h2 id="编写昇腾算子完成矩阵乘"><a href="#编写昇腾算子完成矩阵乘" class="headerlink" title="编写昇腾算子完成矩阵乘"></a>编写昇腾算子完成矩阵乘</h2><p><a href="../../tutorial/ascend/mindspore_develop/readme.md">点击查看相关简介</a></p>
+<h2 id="使用add-custom算子验证流水线以及多缓冲"><a href="#使用add-custom算子验证流水线以及多缓冲" class="headerlink" title="使用add_custom算子验证流水线以及多缓冲"></a>使用add_custom算子验证流水线以及多缓冲</h2><p><a href="./工作簿1.xlsx">原始数据.xlsx</a></p>
+<blockquote>
+<p>!数据的长度限制在int32范围，因此我们采用2048*64*64*64为上限；</p>
+<p>!同时需要注意的是，cache的容量为65536，而输入数据的大小为int16，因此，一次add支持的长度为2048*16个int16</p>
+</blockquote>
+<h3 id="首先验证计算段远快于搬运段，同时证明流水"><a href="#首先验证计算段远快于搬运段，同时证明流水" class="headerlink" title="首先验证计算段远快于搬运段，同时证明流水"></a>首先验证计算段远快于搬运段，同时证明流水</h3><p>我们仅仅需要在compute阶段增加一个add函数</p>
+<blockquote>
+<p>!这个add函数仅仅执行一次add操作，不会改变任何数据，除了compute执行时间</p>
+</blockquote>
+<p>two-add即：</p>
+<p><img src="image-8.png" alt="alt text"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>total_lenght</th>
+<th>use_core_num</th>
+<th>tile_num</th>
+<th>buffer_num</th>
+<th>tile_length</th>
+<th>mean_time_100epoch(ms)</th>
+<th>tip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*8</td>
+<td>31.8391</td>
+<td>zero-add</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*8</td>
+<td>41.581</td>
+<td>one-add</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*8</td>
+<td>51.2499</td>
+<td>two-add</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*8</td>
+<td>60.9961</td>
+<td>three-add</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>老实说，上面的时间相当微妙，如果按照正常逻辑，计算段的时间远低于搬运段，且满足流水，那么此处的时间应该相差不大，但是存在差距，而且不小，且每次增加的时间基本相等。</p>
+<p>增加一个实验，仅进行相同次数的add操作，如下：</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>得到执行时间为9.7928ms</p>
+<p>所以存在以下两种可能性：</p>
+<ul>
+<li><p>非流水，整个core func是串行执行</p>
+</li>
+<li><p>add执行的时间接近或高于2048*8个数据的搬运</p>
+</li>
+</ul>
+<p>再增加三个实验，即仅进行copyin、copyout、copyin+copyout</p>
+<p><img src="image-4.png" alt="alt text"></p>
+<p>copyin执行时间为19.158ms</p>
+<p>copyout执行时间为9.28448ms</p>
+<p>copyin+copyout执行时间为19.523ms</p>
+<p>以上数据能够完美的证明搬入搬出单元是独立的,以及x，y的数据搬运是串行的，得到以下流水图示：</p>
+<p><img src="image-1.png" alt="alt text"></p>
+<p>还有一点在于，在执行freeTensor之前，我们没办法执行新的一轮搬运，这是因为我们的buffernum为1，否则无法满足上述理论模型。</p>
+<p>因此，对于buffernum为1的情况，约束条件为，tile&gt;=2的copyin需要在add之后执行，add的执行必须在copyout之后。</p>
+<p>接着实验</p>
+<h3 id="单核下，成倍增加数据总长度"><a href="#单核下，成倍增加数据总长度" class="headerlink" title="单核下，成倍增加数据总长度"></a>单核下，成倍增加数据总长度</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>total_lenght</th>
+<th>use_core_num</th>
+<th>tile_num</th>
+<th>buffer_num</th>
+<th>tile_length</th>
+<th>mean_time_100epoch(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2048*64*64*8</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048</td>
+<td>14.9771</td>
+</tr>
+<tr>
+<td>2048*64*64*16</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*2</td>
+<td>18.1726</td>
+</tr>
+<tr>
+<td>2048*64*64*32</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*4</td>
+<td>25.9916</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>1</td>
+<td>2048*8</td>
+<td>41.5741</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>当成倍增长总数据长度时，如果是串行，那么执行时间也应该线性增长，但是执行时间非线性，这可以侧面说明执行流程当中的流水。</p>
+<p>对于增加数据长度，数据片数量不变而带来的时间增长，这个很好理解，虽然tile数量没变，但是tile_length在增长：</p>
+<p><img src="image-2.png" alt="alt text"></p>
+<p>对于以上流程，其copyin以及compute决定了执行的总时间，验证copyout是否真的不影响总的执行时间，即在copyout中再执行一轮datacopy，如下：</p>
+<p><img src="image-3.png" alt="alt text"></p>
+<p>得到的数据与上面表格对应的执行时间分别是14.9949，18.7419，27.2262，44.5016，基本不产生区别，可证。</p>
+<h3 id="buffer-num变化"><a href="#buffer-num变化" class="headerlink" title="buffer num变化"></a>buffer num变化</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>total_lenght</th>
+<th>use_core_num</th>
+<th>tile_num</th>
+<th>buffer_num</th>
+<th>tile_length</th>
+<th>mean_time_100epoch_2buffer(ms)</th>
+<th>mean_time_100epoch_1buffer(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*8</td>
+<td>2</td>
+<td>2048*8</td>
+<td>21.7073</td>
+<td>41.5925</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*16</td>
+<td>2</td>
+<td>2048*4</td>
+<td>35.0148</td>
+<td>51.8856</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*32</td>
+<td>2</td>
+<td>2048*2</td>
+<td>69.96</td>
+<td>72.5588</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*64</td>
+<td>2</td>
+<td>2048</td>
+<td>139.851</td>
+<td>119.389</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>随着数据片的数量增加，tile长度减小，时间损耗增大，如下图：</p>
+<p><img src="image-6.png" alt="alt text"></p>
+<p><img src="image-7.png" alt="alt text"></p>
+<p>注意到同单缓冲数据相比，数据片长度分别为2048*8，2048*4，2048*2的样例表现更好，但是当数据片更小时,反而表现更差，</p>
+<p>采用以下图例进行说明：</p>
+<p><img src="image-5.png" alt="alt text"></p>
+<p>当数据片较大时，充分利用到了double buffer，即在进行add的同时也能进行copyin，add无需在copyout以后执行，因此效果较好。</p>
+<p>但是当数据片较小时，为什么double buffer的表现效果却比单缓冲的要差？关于这一点不能够理解。</p>
+<h3 id="多核"><a href="#多核" class="headerlink" title="多核"></a>多核</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>total_lenght</th>
+<th>use_core_num</th>
+<th>tile_num</th>
+<th>buffer_num</th>
+<th>tile_length</th>
+<th>mean_time_100epoch(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2048*64*64*64</td>
+<td>1</td>
+<td>64*64*4</td>
+<td>1</td>
+<td>2048*16</td>
+<td>36.8166</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>2</td>
+<td>64*64*2</td>
+<td>1</td>
+<td>2048*16</td>
+<td>18.5086</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>4</td>
+<td>64*64*1</td>
+<td>1</td>
+<td>2048*16</td>
+<td>9.35409</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>8</td>
+<td>64*32</td>
+<td>1</td>
+<td>2048*16</td>
+<td>4.97731</td>
+</tr>
+<tr>
+<td>2048*64*64*64</td>
+<td>16</td>
+<td>64*16</td>
+<td>1</td>
+<td>2048*16</td>
+<td>3.17449</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>实验符合预期</p>
+<h2 id="matrix-验证"><a href="#matrix-验证" class="headerlink" title="matrix 验证"></a>matrix 验证</h2><h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><p><img src="e06f146dd10f3b4bda45b86a43484302_720.jpg" alt="alt text"></p>
+<p>上面是分片，由上注意到，当B_Split_W为128，group_size为15时，根据代码，blockid=0，15，30的aicore会处理第0组数据，但是B矩阵仅被分了两组数据，因此blockid=30的aicore会轮空，也就是aicore-30实际上没有计算，其余aicore的计算负载增大，导致执行时间延长。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/projects/ascend_matrix/readme.html" data-id="cmbbw5lpl0002tsugbbfcesux" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

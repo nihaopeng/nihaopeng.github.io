@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MathJax &#x3D; {   tex: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } };     deepseek Moe论文原文链接 传统moe存在的问题 知识混合  就是虽然分了不同的expert，但是输入时，有些专家分配了多个token，蕴含不同的知识  知识冗余  某些输入tokens包含的相同（通用）的知识，将会被每个专家学习到，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/readme.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="MathJax &#x3D; {   tex: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } };     deepseek Moe论文原文链接 传统moe存在的问题 知识混合  就是虽然分了不同的expert，但是输入时，有些专家分配了多个token，蕴含不同的知识  知识冗余  某些输入tokens包含的相同（通用）的知识，将会被每个专家学习到，">
+<meta property="og:locale">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-1.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-2.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-3.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-4.png">
+<meta property="og:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image-5.png">
+<meta property="article:published_time" content="2024-10-22T07:44:53.000Z">
+<meta property="article:modified_time" content="2025-05-31T06:09:42.147Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/image.png">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/references/moe/deepseekMoe/readme.html" class="article-date">
+  <time class="dt-published" datetime="2024-10-22T07:44:53.000Z" itemprop="datePublished">2024-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<h1 id="deepseek-Moe"><a href="#deepseek-Moe" class="headerlink" title="deepseek Moe"></a>deepseek Moe</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2401.06066">论文原文链接</a></p>
+<h2 id="传统moe存在的问题"><a href="#传统moe存在的问题" class="headerlink" title="传统moe存在的问题"></a>传统moe存在的问题</h2><ul>
+<li>知识混合</li>
+</ul>
+<p>就是虽然分了不同的expert，但是输入时，有些专家分配了多个token，蕴含不同的知识</p>
+<ul>
+<li>知识冗余</li>
+</ul>
+<p>某些输入tokens包含的相同（通用）的知识，将会被每个专家学习到，那么专家的参数就是冗余的。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="细粒度化expert"><a href="#细粒度化expert" class="headerlink" title="细粒度化expert"></a>细粒度化expert</h3><ul>
+<li><p>增加expert的数量</p>
+</li>
+<li><p>降低expert ffn的参数量</p>
+</li>
+</ul>
+<p>相应的，将激活的expert的数量增大到m倍，以维持计算成本近似</p>
+<p>moe部分计算公式如下：</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>$g_{i,t}$代表选择expert的权重</p>
+<h3 id="设置共享专家处理共享知识"><a href="#设置共享专家处理共享知识" class="headerlink" title="设置共享专家处理共享知识"></a>设置共享专家处理共享知识</h3><p>新增了一定的shared expert，他们用来处理共享知识，结构如下图：</p>
+<p><img src="image-1.png" alt="alt text"></p>
+<p>计算公式如下：</p>
+<p><img src="image-2.png" alt="alt text"></p>
+<p>这些expert是固定激活的，不参与路由的选择，因此相应的，为了维持计算成本，将会将其余的expert的激活数减少，有多少个shared expert，就会减少相应数量的常规expert。</p>
+<h2 id="负载均衡问题"><a href="#负载均衡问题" class="headerlink" title="负载均衡问题"></a>负载均衡问题</h2><p>这个在<a target="_blank" rel="noopener" href="https://helloyutao.top:36993/references/algorithms/moe/index.html#problems">moe problems</a>提到了，也就是路由网络过分选择某几个专家，造成路由崩溃，同时如果专家分布在多个设备上，会因为负载不均衡产生计算瓶颈。</p>
+<p>解决方法：</p>
+<p>专家级平衡损失，用来解决某些expert分配的任务量过多，而有些闲置的问题导致的负载不均衡</p>
+<p><img src="image-3.png" alt="alt text"></p>
+<p>没看懂，信息太少了</p>
+<p>还引入了一个设备级平衡损失，用来解决设备负载不均衡，貌似是分组计算的：</p>
+<p><img src="image-4.png" alt="alt text"></p>
+<h3 id="有个视频讲了相关的损失"><a href="#有个视频讲了相关的损失" class="headerlink" title="有个视频讲了相关的损失"></a>有个视频讲了相关的损失</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15XFQebEBM/?spm_id_from=333.337.search-card.all.click&amp;vd_source=e32e76663edb97323b10f324b6d846ec">视频链接</a></p>
+<p>先看switch transformer中的做法，总的说，就是经过softmax每个expert会有个选择概率，然后将每个expert接收的token数占总token数的占比作为实际值，<br>将softmax输出值平均作为理论值，取差值为loss，用loss更新参数。如下：</p>
+<p><img src="image-5.png" alt="alt text"></p>
+<p>然后发现，deepseek中提到的参数是在switch tranformer中的，所以deepseek直接略过了。。</p>
+<p>其中的f就是实际值，P就是理论值。</p>
+<p>视频提到了这个loss-func的问题，就是target是minimize这个loss，但是这个loss-func没有能力去最小化loss，计算公式的问题。也就是最终其实没有达到load balance的目的。</p>
+<p>而deepseek中采用loss-free，在router的softmax中增加了一个bias用来修正，也就是如果某个专家过多被选择，这个bias会被减小从而减小该专家被选择的可能性（如果训练数据中该专家确实需要被多次选择，该做法是否会错过最佳路径？如果采用随机偏置是否有可能得到更好的效果）。类似于正则惩罚？和RL中的随机偏置也有点像。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/references/moe/deepseekMoe/readme.html" data-id="cmbbw5lpn0009tsug1q8q307k" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>乐子人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CPU寄存器详解通用寄存器    寄存器 别名 全称 说明     X0 zero 零寄存器 可做源寄存器(rs)或目标寄存器(rd)   X1 ra 链接寄存器 保存函数返回地址   X2 sp 栈指针寄存器 指向栈的地址   X3 gp 全局寄存器 用于链接器松弛优化（blkos中未启用）   X4 tp 线程寄存器 常用于在OS中保存指向进程控制块(task_struct)数据结构的指针（b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="乐子人">
+<meta property="og:url" content="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%AF%84%E5%AD%98%E5%99%A8/README.html">
+<meta property="og:site_name" content="乐子人">
+<meta property="og:description" content="CPU寄存器详解通用寄存器    寄存器 别名 全称 说明     X0 zero 零寄存器 可做源寄存器(rs)或目标寄存器(rd)   X1 ra 链接寄存器 保存函数返回地址   X2 sp 栈指针寄存器 指向栈的地址   X3 gp 全局寄存器 用于链接器松弛优化（blkos中未启用）   X4 tp 线程寄存器 常用于在OS中保存指向进程控制块(task_struct)数据结构的指针（b">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-05-31T02:50:46.049Z">
+<meta property="article:modified_time" content="2025-05-31T02:50:46.049Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="乐子人" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">乐子人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世界因乐子而伟大</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nihaopeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%AF%84%E5%AD%98%E5%99%A8/README.html" class="article-date">
+  <time class="dt-published" datetime="2025-05-31T02:50:46.049Z" itemprop="datePublished">2025-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="CPU寄存器详解"><a href="#CPU寄存器详解" class="headerlink" title="CPU寄存器详解"></a>CPU寄存器详解</h1><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>寄存器</th>
+<th>别名</th>
+<th>全称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X0</td>
+<td>zero</td>
+<td>零寄存器</td>
+<td>可做源寄存器(rs)或目标寄存器(rd)</td>
+</tr>
+<tr>
+<td>X1</td>
+<td>ra</td>
+<td>链接寄存器</td>
+<td>保存函数返回地址</td>
+</tr>
+<tr>
+<td>X2</td>
+<td>sp</td>
+<td>栈指针寄存器</td>
+<td>指向栈的地址</td>
+</tr>
+<tr>
+<td>X3</td>
+<td>gp</td>
+<td>全局寄存器</td>
+<td>用于链接器松弛优化（blkos中未启用）</td>
+</tr>
+<tr>
+<td>X4</td>
+<td>tp</td>
+<td>线程寄存器</td>
+<td>常用于在OS中保存指向进程控制块(task_struct)数据结构的指针（blkos中未启用）</td>
+</tr>
+<tr>
+<td>X5 ~ X7，X28 ~ X31</td>
+<td>t0 ~ t6</td>
+<td>临时寄存器</td>
+</tr>
+<tr>
+<td>X8</td>
+<td>s0/fp</td>
+<td>帧指针寄存器</td>
+<td>用于函数调用，被调用函数需保存数据</td>
+</tr>
+<tr>
+<td>X9</td>
+<td>s1</td>
+<td></td>
+<td>用于函数调用 ，被调用函数需要保存的数据</td>
+</tr>
+<tr>
+<td>X10 ~ X17</td>
+<td>a0 ~ a7</td>
+<td></td>
+<td>用于函数调用，传递参数和返回值</td>
+</tr>
+<tr>
+<td>X18 ~ X27</td>
+<td>s2 ~ s11</td>
+<td></td>
+<td>用于函数调用 ，被调用函数需要保存的数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="CSR寄存器"><a href="#CSR寄存器" class="headerlink" title="CSR寄存器"></a>CSR寄存器</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>寄存器</th>
+<th>别名</th>
+<th>全称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c305</td>
+<td>mtvec</td>
+<td>Machine Trap-Vector Base-Address</td>
+<td>用于保存中断查询程序地址，需要在系统初始化时通过csr指令赋值</td>
+</tr>
+<tr>
+<td>c341</td>
+<td>mepc</td>
+<td>Machine Exception Program Counter</td>
+<td>用于保存发生中断时，程序执行的pc，也就是中断地址</td>
+</tr>
+<tr>
+<td>c342</td>
+<td>mcause</td>
+<td>Machine Cause</td>
+<td>保存中断发生的原因，此处保存的是发生中断的端口</td>
+</tr>
+<tr>
+<td>c300</td>
+<td>mstatus</td>
+<td>Machine Status</td>
+<td>blkrv中该寄存器仅作为中断使能状态寄存器，低8位是否为1代表是否使能</td>
+</tr>
+<tr>
+<td>c180</td>
+<td>satp</td>
+<td>Supervisor Address Translation and Protection Register</td>
+<td>保存页表基址</td>
+</tr>
+<tr>
+<td>c181</td>
+<td>satp_s_cp</td>
+<td></td>
+<td>发生系统调用时，保存satp副本</td>
+</tr>
+<tr>
+<td>c182</td>
+<td>satp_i_cp</td>
+<td></td>
+<td>发生中断调用时，保存satp副本</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="流水寄存器"><a href="#流水寄存器" class="headerlink" title="流水寄存器"></a>流水寄存器</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>寄存器</th>
+<th>全称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pc</td>
+<td>Program counter</td>
+<td>用于保存当前执行指令的地址</td>
+</tr>
+<tr>
+<td>imm</td>
+<td></td>
+<td>用于保存解析指令时产生的立即数</td>
+</tr>
+<tr>
+<td>addr_v</td>
+<td>virtual address</td>
+<td>用于保存LOAD/STORE指令等指向的地址</td>
+</tr>
+<tr>
+<td>data2regs</td>
+<td></td>
+<td>用于保存需要存储到通用寄存器的数据</td>
+</tr>
+<tr>
+<td>data2mem</td>
+<td></td>
+<td>用于保存需要存储到内存的数据</td>
+</tr>
+<tr>
+<td>inst</td>
+<td>instruction</td>
+<td>用于保存读取的指令</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nihaopeng.github.io/docs/tutorial/blkrv/%E8%BF%9B%E9%98%B6/%E5%AF%84%E5%AD%98%E5%99%A8/README.html" data-id="cmbbw5lpu0012tsug3hqu1sn5" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/31/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
