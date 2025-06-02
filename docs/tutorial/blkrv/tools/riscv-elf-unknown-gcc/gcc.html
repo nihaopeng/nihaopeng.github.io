@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="乐子人">
 <meta property="og:description" content="riscv交叉编译链依赖安装顺序执行以下：download gmp12345tar -xvjf gmp-6.2.1.tar.bz2cd gmp-6.2.1&#x2F;.&#x2F;configuremakemake install download mpfr12345tar -xvjf mpfr-4.1.0.tar.bz2cd mpfr-4.1.0&#x2F;.&#x2F;configuremakemake install downlo">
 <meta property="og:locale">
-<meta property="article:published_time" content="2025-05-31T08:02:11.548Z">
-<meta property="article:modified_time" content="2025-05-31T08:02:11.548Z">
+<meta property="article:published_time" content="2025-06-02T08:33:41.664Z">
+<meta property="article:modified_time" content="2025-06-02T08:33:41.664Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -82,7 +82,7 @@
         <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/docs/tutorial/blkrv/tools/riscv-elf-unknown-gcc/gcc.html" class="article-date">
-  <time class="dt-published" datetime="2025-05-31T08:02:11.548Z" itemprop="datePublished">2025-05-31</time>
+  <time class="dt-published" datetime="2025-06-02T08:33:41.664Z" itemprop="datePublished">2025-06-02</time>
 </a>
     
   </div>
@@ -104,11 +104,10 @@
 <li>手动编译<br>1,<code>git clone --recursive https://github.com/riscv/riscv-gnu-toolchain</code></li>
 </ul>
 <p>fine,你可以选择不递归下载，后续编译会自动下载相关内容。</p>
-<p>2,tar.zst解压：<br><code>tar -I zstd -xvf riscv-gnu-toolchain-source.tar.zst</code></p>
-<p>3,<code>cd riscv-gnu-toolchain</code></p>
-<p>4,<code>./configure --prefix=/opt/riscv32 --with-arch=rv32i --with-abi=ilp32</code></p>
+<p>2,<code>cd riscv-gnu-toolchain</code></p>
+<p>3,<code>./configure --prefix=/opt/riscv32 --with-arch=rv32i --with-abi=ilp32</code></p>
 <p>上面prefix代表编译完后的文件存放路径，—with-arch=rv32i代表支持riscv-32位-整数指令集，abi是调用规范，使用ilp32，不支持浮点。</p>
-<p>5,<code>make</code></p>
+<p>4,<code>make</code></p>
 <h3 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h3><p>1,<code>vim ~/.bashrc</code></p>
 <ul>
 <li><p>采用手动编译的，末尾增加<code>export PATH=/opt/riscv32/bin:$PATH$</code>，也就是上面的prefix。</p>
