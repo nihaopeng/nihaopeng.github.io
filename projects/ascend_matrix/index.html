@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>昇腾算子矩阵乘探究 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="active with_link"><a href="/projects/ascend_matrix/index.html"><span class="label">ascend_matrix</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/ftp-design/ftp-cjc.html"><span class="label">ftp-design</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/IntelligentAudioChat/index.html"><span class="label">IntelligentAudioChat</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">riscv-telechat-openeuler</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/projects/riscv-telechat-openeuler/openeuler/openeuler.html"><span class="label">openeuler</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/riscv-telechat-openeuler/telechat移植/telechat.html"><span class="label">telechat移植</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/projects/sd1.5-fine-tuning/sd.html"><span class="label">sd1.5-fine-tuning</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/tinytodo/index.html"><span class="label">tinytodo</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>昇腾算子矩阵乘探究</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E7%BC%96%E5%86%99%E6%98%87%E8%85%BE%E7%AE%97%E5%AD%90%E5%AE%8C%E6%88%90%E7%9F%A9%E9%98%B5%E4%B9%98">编写昇腾算子完成矩阵乘</h2>
+<p><a href="../../tutorial/ascend/mindspore_develop/index.html"  >点击查看相关简介</a></p>
+<h2 id="%E4%BD%BF%E7%94%A8add_custom%E7%AE%97%E5%AD%90%E9%AA%8C%E8%AF%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BC%93%E5%86%B2">使用add_custom算子验证流水线以及多缓冲</h2>
+<p><a href="./%E5%B7%A5%E4%BD%9C%E7%B0%BF1.xlsx"  >原始数据.xlsx</a></p>
+<blockquote class="spoiler warning">
+<p>数据的长度限制在int32范围，因此我们采用2048*64*64*64为上限；</p>
+</blockquote>
+<blockquote class="spoiler warning">
+<p>同时需要注意的是，cache的容量为65536，而输入数据的大小为int16，因此，一次add支持的长度为2048*16个int16</p>
+</blockquote>
+<h3 id="%E9%A6%96%E5%85%88%E9%AA%8C%E8%AF%81%E8%AE%A1%E7%AE%97%E6%AE%B5%E8%BF%9C%E5%BF%AB%E4%BA%8E%E6%90%AC%E8%BF%90%E6%AE%B5%EF%BC%8C%E5%90%8C%E6%97%B6%E8%AF%81%E6%98%8E%E6%B5%81%E6%B0%B4">首先验证计算段远快于搬运段，同时证明流水</h3>
+<p>我们仅仅需要在compute阶段增加一个add函数</p>
+<blockquote class="spoiler warning">
+<p>这个add函数仅仅执行一次add操作，不会改变任何数据，除了compute执行时间</p>
+</blockquote>
+<p>two-add即：</p>
+<p><img src="image-8.png" alt="alt text" /></p>
+<table>
+<thead>
+<tr>
+  <th>total_lenght</th>
+  <th>use_core_num</th>
+  <th>tile_num</th>
+  <th>buffer_num</th>
+  <th>tile_length</th>
+  <th>mean_time_100epoch(ms)</th>
+  <th>tip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*8</td>
+  <td>31.8391</td>
+  <td>zero-add</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*8</td>
+  <td>41.581</td>
+  <td>one-add</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*8</td>
+  <td>51.2499</td>
+  <td>two-add</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*8</td>
+  <td>60.9961</td>
+  <td>three-add</td>
+</tr>
+</tbody>
+</table>
+<p>老实说，上面的时间相当微妙，如果按照正常逻辑，计算段的时间远低于搬运段，且满足流水，那么此处的时间应该相差不大，但是存在差距，而且不小，且每次增加的时间基本相等。</p>
+<p>增加一个实验，仅进行相同次数的add操作，如下：</p>
+<p><img src="image.png" alt="alt text" /></p>
+<p>得到执行时间为9.7928ms</p>
+<p>所以存在以下两种可能性：</p>
+<ul>
+<li><p>非流水，整个core func是串行执行</p>
+</li>
+<li><p>add执行的时间接近或高于2048*8个数据的搬运</p>
+</li>
+</ul>
+<p>再增加三个实验，即仅进行copyin、copyout、copyin+copyout</p>
+<p><img src="image-4.png" alt="alt text" /></p>
+<p>copyin执行时间为19.158ms</p>
+<p>copyout执行时间为9.28448ms</p>
+<p>copyin+copyout执行时间为19.523ms</p>
+<p>以上数据能够完美的证明搬入搬出单元是独立的,以及x，y的数据搬运是串行的，得到以下流水图示：</p>
+<p><img src="image-1.png" alt="alt text" /></p>
+<p>还有一点在于，在执行freeTensor之前，我们没办法执行新的一轮搬运，这是因为我们的buffernum为1，否则无法满足上述理论模型。</p>
+<p>因此，对于buffernum为1的情况，约束条件为，tile&gt;=2的copyin需要在add之后执行，add的执行必须在copyout之后。</p>
+<p>接着实验</p>
+<h3 id="%E5%8D%95%E6%A0%B8%E4%B8%8B%EF%BC%8C%E6%88%90%E5%80%8D%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%80%BB%E9%95%BF%E5%BA%A6">单核下，成倍增加数据总长度</h3>
+<table>
+<thead>
+<tr>
+  <th>total_lenght</th>
+  <th>use_core_num</th>
+  <th>tile_num</th>
+  <th>buffer_num</th>
+  <th>tile_length</th>
+  <th>mean_time_100epoch(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2048*64*64*8</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048</td>
+  <td>14.9771</td>
+</tr>
+<tr>
+  <td>2048*64*64*16</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*2</td>
+  <td>18.1726</td>
+</tr>
+<tr>
+  <td>2048*64*64*32</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*4</td>
+  <td>25.9916</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>1</td>
+  <td>2048*8</td>
+  <td>41.5741</td>
+</tr>
+</tbody>
+</table>
+<p>当成倍增长总数据长度时，如果是串行，那么执行时间也应该线性增长，但是执行时间非线性，这可以侧面说明执行流程当中的流水。</p>
+<p>对于增加数据长度，数据片数量不变而带来的时间增长，这个很好理解，虽然tile数量没变，但是tile_length在增长：</p>
+<p><img src="image-2.png" alt="alt text" /></p>
+<p>对于以上流程，其copyin以及compute决定了执行的总时间，验证copyout是否真的不影响总的执行时间，即在copyout中再执行一轮datacopy，如下：</p>
+<p><img src="image-3.png" alt="alt text" /></p>
+<p>得到的数据与上面表格对应的执行时间分别是14.9949，18.7419，27.2262，44.5016，基本不产生区别，可证。</p>
+<h3 id="buffer-num%E5%8F%98%E5%8C%96">buffer num变化</h3>
+<table>
+<thead>
+<tr>
+  <th>total_lenght</th>
+  <th>use_core_num</th>
+  <th>tile_num</th>
+  <th>buffer_num</th>
+  <th>tile_length</th>
+  <th>mean_time_100epoch_2buffer(ms)</th>
+  <th>mean_time_100epoch_1buffer(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*8</td>
+  <td>2</td>
+  <td>2048*8</td>
+  <td>21.7073</td>
+  <td>41.5925</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*16</td>
+  <td>2</td>
+  <td>2048*4</td>
+  <td>35.0148</td>
+  <td>51.8856</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*32</td>
+  <td>2</td>
+  <td>2048*2</td>
+  <td>69.96</td>
+  <td>72.5588</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*64</td>
+  <td>2</td>
+  <td>2048</td>
+  <td>139.851</td>
+  <td>119.389</td>
+</tr>
+</tbody>
+</table>
+<p>随着数据片的数量增加，tile长度减小，时间损耗增大，如下图：</p>
+<p><img src="image-6.png" alt="alt text" /></p>
+<p><img src="image-7.png" alt="alt text" /></p>
+<p>注意到同单缓冲数据相比，数据片长度分别为2048*8，2048*4，2048*2的样例表现更好，但是当数据片更小时,反而表现更差，</p>
+<p>采用以下图例进行说明：</p>
+<p><img src="image-5.png" alt="alt text" /></p>
+<p>当数据片较大时，充分利用到了double buffer，即在进行add的同时也能进行copyin，add无需在copyout以后执行，因此效果较好。</p>
+<p>但是当数据片较小时，为什么double buffer的表现效果却比单缓冲的要差？关于这一点不能够理解。</p>
+<h3 id="%E5%A4%9A%E6%A0%B8">多核</h3>
+<table>
+<thead>
+<tr>
+  <th>total_lenght</th>
+  <th>use_core_num</th>
+  <th>tile_num</th>
+  <th>buffer_num</th>
+  <th>tile_length</th>
+  <th>mean_time_100epoch(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>1</td>
+  <td>64*64*4</td>
+  <td>1</td>
+  <td>2048*16</td>
+  <td>36.8166</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>2</td>
+  <td>64*64*2</td>
+  <td>1</td>
+  <td>2048*16</td>
+  <td>18.5086</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>4</td>
+  <td>64*64*1</td>
+  <td>1</td>
+  <td>2048*16</td>
+  <td>9.35409</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>8</td>
+  <td>64*32</td>
+  <td>1</td>
+  <td>2048*16</td>
+  <td>4.97731</td>
+</tr>
+<tr>
+  <td>2048*64*64*64</td>
+  <td>16</td>
+  <td>64*16</td>
+  <td>1</td>
+  <td>2048*16</td>
+  <td>3.17449</td>
+</tr>
+</tbody>
+</table>
+<p>实验符合预期</p>
+<h2 id="matrix-%E9%AA%8C%E8%AF%81">matrix 验证</h2>
+<h2 id="%E6%9D%82%E9%A1%B9">杂项</h2>
+<p><img src="e06f146dd10f3b4bda45b86a43484302_720.jpg" alt="alt text" /></p>
+<p>上面是分片，由上注意到，当B_Split_W为128，group_size为15时，根据代码，blockid=0，15，30的aicore会处理第0组数据，但是B矩阵仅被分了两组数据，因此blockid=30的aicore会轮空，也就是aicore-30实际上没有计算，其余aicore的计算负载增大，导致执行时间延长。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/projects/ftp-design/ftp-cjc.html">
+                            <span class="label">ftp-design</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

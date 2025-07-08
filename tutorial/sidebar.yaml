@@ -1,0 +1,57 @@
+items:
+-   label: blkrv
+    items:
+    -   label: quickstart
+        file: blkrv/quickstart/quickstart.md
+    -   label: 进阶
+        items: 
+        -   label: wrapper
+            file: blkrv/进阶/wrapper/README.md
+        -   label: 外设
+            file: blkrv/进阶/外设/README.md
+        -   label: 寄存器
+            file: blkrv/进阶/寄存器/README.md
+        -   label: MMU
+            file: blkrv/进阶/MMU/README.md
+        -   label: BUS
+            file: blkrv/进阶/RIB-BUS/README.md
+    -   label: tools
+        items:
+        -   label: fltk
+            file: blkrv/tools/fltk/fltk.md
+        -   label: riscv交叉编译链
+            file: blkrv/tools/riscv/riscv.md
+        -   label: verilator
+            file: blkrv/tools/verilator/verilator.md
+        -   label: mingw
+            file: blkrv/tools/mingw/mingw.md
+-   label: linux
+    items:
+    -   label: frp
+        file: linux/frp/frp.md
+    -   label: service
+        file: linux/service/service.md
+-   label: ascend
+    items:
+    -   label: problems
+        file: ascend/problems/README.md
+    -   label: benchTest
+        file: ascend/benchTest/readme.md
+    -   label: kernel-devel
+        file: ascend/mindspore_develop/readme.md
+-   label: c++
+    items:
+    -   label: cmake
+        file: c++/fltk/README.md
+    -   label: cmake
+        file: c++/cmake/README.md
+    -   label: makefile
+        file: c++/makefile/readme.md
+-   label: python
+    items:
+    -   label: pyside6
+        file: python/pyside6/readme.md
+-   label: somethingInteresting
+    items:
+    -   label: officeAi
+        file: somethingInteresting/officeAi/README.md

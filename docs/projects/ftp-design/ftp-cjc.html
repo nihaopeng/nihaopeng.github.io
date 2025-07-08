@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>openEuler应用软件开发赛+什么都不会+初赛+ftp服务器实现 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/docs/projects/ascend_matrix/index.html"><span class="label">ascend_matrix</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/projects/ftp-design/ftp-cjc.html"><span class="label">ftp-design</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/projects/IntelligentAudioChat/index.html"><span class="label">IntelligentAudioChat</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">riscv-telechat-openeuler</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/projects/riscv-telechat-openeuler/openeuler/openeuler.html"><span class="label">openeuler</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/projects/riscv-telechat-openeuler/telechat移植/telechat.html"><span class="label">telechat移植</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/docs/projects/sd1.5-fine-tuning/sd.html"><span class="label">sd1.5-fine-tuning</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/projects/tinytodo/index.html"><span class="label">tinytodo</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>openEuler应用软件开发赛+什么都不会+初赛+ftp服务器实现</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <blockquote>
+<p>支持被动模式避免客户端位于firewall或者NAT后面的情况</p>
+<p>支持主动模式</p>
+<p>整个项目完全使用仓颉语言开发</p>
+<p>未使用任何开源项目</p>
+<p>x86_64/aarch_64</p>
+</blockquote>
+<h2 id="run">run</h2>
+<ul>
+<li><p>server</p>
+<p><code>bash run-ftp.sh</code></p>
+</li>
+<li><p>client</p>
+<p><code>dnf install ftp</code></p>
+<p><code>ftp 127.0.0.1</code></p>
+</li>
+</ul>
+<p>内置用户</p>
+<table>
+<thead>
+<tr>
+  <th>user</th>
+  <th>password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ftp</td>
+  <td></td>
+</tr>
+<tr>
+  <td>user1</td>
+  <td>123456</td>
+</tr>
+<tr>
+  <td>user2</td>
+  <td>123456</td>
+</tr>
+</tbody>
+</table>
+<p>可用协议指令</p>
+<table>
+<thead>
+<tr>
+  <th>inst</th>
+  <th>参数</th>
+  <th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>&quot;USER&quot;</td>
+  <td>username</td>
+  <td>登陆用户</td>
+</tr>
+<tr>
+  <td>&quot;PASS&quot;</td>
+  <td>password</td>
+  <td>登陆密码</td>
+</tr>
+<tr>
+  <td>&quot;SYST&quot;</td>
+  <td></td>
+  <td>查看系统信息</td>
+</tr>
+<tr>
+  <td>&quot;PORT&quot;</td>
+  <td>port</td>
+  <td>使用客户端端口设置主动模式</td>
+</tr>
+<tr>
+  <td>&quot;LIST&quot;</td>
+  <td></td>
+  <td>列出目录文件</td>
+</tr>
+<tr>
+  <td>&quot;CWD&quot;</td>
+  <td>path</td>
+  <td>切换目录</td>
+</tr>
+<tr>
+  <td>&quot;PWD&quot;</td>
+  <td></td>
+  <td>查看当前路径</td>
+</tr>
+<tr>
+  <td>&quot;PASV&quot;</td>
+  <td></td>
+  <td>设置被动模式</td>
+</tr>
+<tr>
+  <td>&quot;TYPE&quot;</td>
+  <td>mode</td>
+  <td>设置传输格式</td>
+</tr>
+<tr>
+  <td>&quot;RETR&quot;</td>
+  <td>file</td>
+  <td>下载文件</td>
+</tr>
+<tr>
+  <td>&quot;STOR&quot;</td>
+  <td>file</td>
+  <td>上传文件</td>
+</tr>
+<tr>
+  <td>&quot;MKD&quot;</td>
+  <td>file</td>
+  <td>创建文件夹</td>
+</tr>
+<tr>
+  <td>&quot;ABOR&quot;</td>
+  <td></td>
+  <td>流产连接</td>
+</tr>
+<tr>
+  <td>&quot;QUIT&quot;</td>
+  <td></td>
+  <td>退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E6%95%88%E6%9E%9C">效果</h2>
+<ul>
+<li>filezilla</li>
+</ul>
+<p><img src="./filezilla.png" alt="filezilla" /></p>
+<ul>
+<li>ftp</li>
+</ul>
+<p><img src="./ftp.png" alt="ftp" /></p>
+<ul>
+<li>curl</li>
+</ul>
+<p><img src="./curl.png" alt="curl" /></p>
+<h2 id="%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84">整体架构</h2>
+
+<div class="mermaid">flowchart LR    
+    frontend[&quot;frontend&quot;]
+    requestDistri[&quot;request distribution&quot;]
+    client[&quot;client&quot;]
+    subgraph processUnit
+        direction LR
+        parser[&quot;parser&quot;]
+        sender[&quot;sender&quot;]
+    end
+    subgraph processUnit1
+    end
+    subgraph processUnit2
+    end
+    subgraph ...
+    end
+    transCtl[&quot;transport control&quot;]
+    userCtl[&quot;user control&quot;]
+    utils[&quot;utils(String2Int...)&quot;]
+    config[&quot;configuration(only one)&quot;]
+    asClient[&quot;asClient&quot;]
+    asServer[&quot;asServer&quot;]
+    fs[&quot;file system&quot;]
+
+    requestDistri --&gt; frontend
+    parser --&gt; requestDistri
+    processUnit1 --&gt; requestDistri
+    processUnit2 --&gt; requestDistri
+    ... --&gt; requestDistri
+    frontend --&gt; client
+    client --&gt; frontend
+    config --&gt; userCtl
+    transCtl --&gt; parser
+    userCtl --&gt; parser
+    fs --&gt; transCtl
+    config --&gt; transCtl
+    asClient --&gt; transCtl
+    asServer --&gt; transCtl
+    userCtl --&gt; transCtl
+    linkStyle 0,1,2,3,4,5,6,8,9,10,12,13,14 stroke:green
+    linkStyle 7,11 stroke:red
+</div>
+<h2 id="%E5%B9%B6%E5%8F%91%E6%9E%B6%E6%9E%84">并发架构</h2>
+<ul>
+<li><p>资源池方案</p>
+<p>将操作系统资源抽象为池，当出现新的用户请求时，从池中取出资源进行分配</p>
+<p>在本项目中的实现即为，使用request Distribution（reqdist）模块解耦业务逻辑与用户请求</p>
+<p>新的请求进入时，reqdist模块将会分配新的线程用于处理当前的请求，当请求断开时，释放线程资源回到池中。因此所有占用的资源都是可限制的，我们可以预设线程数以限制访问的qps，防止某些不安全攻击操作。</p>
+<p>[可扩展]解耦的好处是，我们能够轻易的扩展其余硬件，例如，当服务器不止一个cpu（或者其他协处理器）时，线程资源分配将会复杂化，我们仅需要在reqdist模块中将资源分配给process unit，而不必考虑具体的业务逻辑。</p>
+</li>
+<li><p>资源锁</p>
+<p>多个线程对文件的变动将有可能产生资源冲突。</p>
+<p>我们最小化公共资源，将所有对实际文件的操作都聚集在configer模块当中，因此我们使用configer改变文件状态时，将会使用锁解决访问资源冲突问题。</p>
+<p>同时对资源进行精细化控制，以便平衡时间与资源同步的问题。</p>
+</li>
+</ul>
+<h2 id="%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86">权限管理</h2>
+<ul>
+<li><p>文件系统</p>
+<p>为了实现足够精细化的权限管理，我们手工实现了一个简单的文件系统，仿照linux文件系统的inode设计，下面是一个文件夹的inode结构体，使用json文件存储inode列表。</p>
+
+<pre class="language-json"><code class="language-json">{
+    &quot;name&quot;: &quot;/&quot;,
+    &quot;type&quot;: &quot;d&quot;,
+    &quot;user&quot;: &quot;root&quot;,
+    &quot;user_power&quot;: 7,
+    &quot;group_power&quot;: 7,
+    &quot;others_power&quot;: 0,
+    &quot;subfiles&quot;: [
+        0,0,1,2
+    ]
+}
+</code></pre>
+<p>文件的id取决于文件inode在json array中的index</p>
+</li>
+<li><p>权限</p>
+<p>我们的权限系统依然仿照linux，user_power代表用户（创建者）本身的权限，group_power代表组用户的权限，others_power代表其他用户的权限。<br />
+  组用户取决于config.json文件中user group，如下</p>
+
+<pre class="language-json"><code class="language-json">&quot;user1&quot;:{
+    &quot;password&quot;:&quot;123456&quot;,
+    &quot;group&quot;:[&quot;ftp&quot;],
+    &quot;root&quot;:1
+}
+</code></pre>
+<p>例如上面的user1信息中，ftp默认用户是其组用户成员<br />
+  权限数字分别代表三位数字的bool值，当第一位为1，也就是100时值为4，代表有下载查看权限，当第二位为1，也就是010时值为2，代表有下载权限，剩余一位留作扩展。</p>
+</li>
+<li><p>tip</p>
+<p><strong>既然每一样都跟linux类似，为什么不直接用linux的文件系统？</strong></p>
+<blockquote>
+<p>因为我们对项目的要求是可扩展性，如果直接使用linux的文件系统，如果我们以后需要扩展其余权限，例如更改文件的权限，删除文件的权限，我们的扩展就会非常困难。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93">数据传输</h2>
+<h3 id="%E4%B8%BB%E5%8A%A8%E6%A8%A1%E5%BC%8F">主动模式</h3>
+<p>主动模式下，需要客户端告知服务器端口</p>
+<p>因此服务器需要作为客户端连接用户机，此时无需考虑端口的问题。</p>
+<h3 id="%E8%A2%AB%E5%8A%A8%E6%A8%A1%E5%BC%8F">被动模式</h3>
+<p>被动模式下，需要服务端告知客户端数据端口</p>
+<p>此时服务器作为数据传输的服务器等待客户端连接。</p>
+<p>服务器需要扫描服务器上的可用端口告知客户端以连接。</p>
+<ul>
+<li><p>端口池</p>
+<p>秉持所有资源皆可控的理念，我们将端口也作为配置放入配置文件，端口作为资源为客户端分配，达到可控的方式。</p>
+<p><strong>假设我们采用临时扫描端口的方式，那么不得不考虑的问题是，在扫描到空闲端口后，但是该端口实际上属于service所使用的端口（出现暂时空闲），在扫描到确认连接这段时间内，该端口有可能被重新占用的问题。因此我们的方案既避免服务占用ftp端口的情况，也避免ftp占用服务端口的情况，同时减少代码开发代价</strong></p>
+</li>
+</ul>
+<h2 id="source">source</h2>
+<p><a href="https://atomgit.com/openeuler123/nihaopeng"  target="_blank">download</a></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/projects/ascend_matrix/index.html">
+                            <span class="icon"></span>
+                            <span class="label">ascend_matrix</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/docs/projects/IntelligentAudioChat/index.html">
+                            <span class="label">IntelligentAudioChat</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

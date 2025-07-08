@@ -1,0 +1,7 @@
+items:
+  -   label: projects
+      file: projects/README.md
+  -   label: references
+      file: references/README.md
+  -   label: tutorial
+      file: tutorial/README.md

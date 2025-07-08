@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>A Real-Time Adaptive Multi-Stream GPU System for Online Approximate Nearest Neighborhood Search - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">algorithms</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/references/algorithms/ann/ann.html"><span class="label">ANN</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/algorithms/moe/index.html"><span class="label">moe</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/algorithms/transformer/index.html"><span class="label">transformer</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">ann</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/references/ann/faastube/faastube.html"><span class="label">faastube</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/ann/fusionANNS/fusionANNs.html"><span class="label">fusionANNS</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/ann/second-Tier-memory/second-Tier-memory.html"><span class="label">second-Tier-memory</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/references/ann/a_realtime_adaptive_multi_stream_GPU_system/adaptive_multi_stream.html"><span class="label">adaptive_multi_stream</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/no_translate.html?ref=ann/runmmy/runmmy.html&from=/docs/references/ann/runmmy/runmmy.html"><span class="label">runmmy</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">moe</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/references/no_translate.html?ref=moe/Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts/index.html&from=/docs/references/moe/Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts/index.html"><span class="label">Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/moe/deepseekMoe/index.html"><span class="label">deepseek Moe</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/references/moe/parallel_method/index.html"><span class="label">moe_parallel_method</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>A Real-Time Adaptive Multi-Stream GPU System for Online Approximate Nearest Neighborhood Search</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-07-08">
+                                    2025-07-08
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <hr />
+<blockquote>
+<p>解决在线场景中需要实时插入的问题。</p>
+</blockquote>
+<h2 id="main-problem">main problem</h2>
+<ul>
+<li><p>1，在线场景实时插入</p>
+</li>
+<li><p>现有系统对ANNS采用单流串行执行模式：如下图上部分：</p>
+</li>
+</ul>
+<div style="text-align:center;"><img src="QQ20241207-102525.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>当进行实时向量扩展时，批处理需要进行阻塞，如果复制的数据量大，等待期延长，导致搜索过程被阻碍。</p>
+<ul>
+<li>同时，触发向量扩展时，需要GPU启动kernel来进行内存分配和复制，这个过程是耗时的。</li>
+</ul>
+<h2 id="solution">solution</h2>
+<h3 id="CPU/GPU-ANNS%E4%B8%AD%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%90%91%E9%87%8F%E6%8F%92%E5%85%A5%E6%96%B9%E6%B3%95">CPU/GPU ANNS中的在线向量插入方法</h3>
+<div style="text-align:center;"><img src="QQ20241207-105307.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<ul>
+<li>首先改变了数据结构改为链表（如上图），现有系统将所有的向量连续的排列在内存当中。header info的内容报头包含指示prev_header、next_header和block_info的地址的重要信息（向量容量、向量大小等）。ml中记录的是这个簇中属于这个block的vectorid。mv被以32维交错的放在内存块中（？）如下图，D是单个向量的维度。</li>
+</ul>
+<div style="text-align:center;"><img src="QQ20241207-154410.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<ul>
+<li>设计新的内存分配方式，就是加了一个内存池管理，内存池的大小是整个主存的大小。然后将内存按块分为最小单位，</li>
+</ul>
+<div style="text-align:center;"><img src="QQ20241207-160804.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>直接看看它的算法吧，老实说，看不太懂，就对于上面的伪码而言，k是从哪里冒出来的？文中似乎并没有提到这一点，我们就假设代指全部。同时忽略需要同步的代码，仅看代码逻辑。</p>
+<p>那么当需要插入一个新向量时：</p>
+<ul>
+<li>1，计算向量列表的末尾索引did</li>
+<li>2，通过did计算应该放在哪个block，blockid为mid，还需要该向量在block内的偏移moff才能准确定位（吐槽一下，$T_{m}$又是哪来的？）</li>
+<li>3，如果mid大于已分配的block list，那就分配新的block，注意到嵌套if，第一个if查看是否需要插入新的block，第二个if判断是否是第一个元素，才选择从内存池中新分配block，这里需要强调的是，为什么这么做呢，别忘记了整个函数是一个gpu核函数，此时其他线程也在操作。原子化的判断，不会使其余线程也同时加入新block造成冲突（精彩）</li>
+<li>4，后续就是更新$m_{mid}$，然后将新的vector写入block。</li>
+<li>5，如果新加入的block list的长度超过预定义的$T^{'}_{m}$,那么执行重排操作。</li>
+</ul>
+<p>重排操作（严重吐槽，这还是个递归函数，关于函数的解释就两句话？？，图也没有一个，不确定正式发表是否有改动，我要是reviewer包给他挂了）：</p>
+<div style="text-align:center;"><img src="QQ20241207-163515.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>言归正传，其实主要思想就是，我们不是新加入了一个block，上图中是$m_{j}$,我们这个新block可能和旧列表中的向量是连续排列的，因此需要将$m_{j}$放到$m_{i}$后面，那么就交换$m_{j}$和$m_{i+1}$，交换需要中间空闲临时块。</p>
+<p>那么产生的新问题是，交换过去的$m_{i+1}$也可能和旧列表中的块邻近，因此采用递归操作知道收敛。这里的递归终止实在是看不懂了，merge是在干嘛是真不知道。</p>
+<p>后面才注意到还有个图c，甚至论文里面没有引用过，如下：</p>
+<div style="text-align:center;"><img src="QQ20241207-184738.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<h3 id="%E6%B5%81%E7%BC%93%E5%AD%98%E5%A4%9A%E6%B5%81%E6%89%A7%E8%A1%8C">流缓存多流执行</h3>
+<div style="text-align:center;"><img src="QQ20241207-184852.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>如上图，将多个执行核放到多个流上。<br />
+这样做有两个问题要考虑</p>
+<blockquote>
+<p>1）系统必须避免联机内存分配和解除分配，以防止全局阻塞和降级为串行化机制。2)系统中的每个内核都不应消耗大量资源，因为过多的资源消耗会导致阻塞。</p>
+</blockquote>
+<p>总结就是由于存在共享资源，所以会有锁的问题，一旦多个流同时访问同一个资源，那就会由并行转为串行执行。</p>
+<p>对于问题1：</p>
+<blockquote>
+<p>设计了一个双层的基于流的资源池。最初，每个批量搜索请求被分配给一个专用流，拥有单独的小内存分配（足以使用ivfflat和ivfpq算法）。</p>
+</blockquote>
+<p>之前提到内存池大小是整个内存，这里就是为每一个搜索流单独分配一个足够使用的内存空间。这样就不会和实时插入流产生冲突。<br />
+如果不够用了，再从中央内存池分配空间。</p>
+<h2 id="deployment-detail">deployment detail</h2>
+<p>实际使用的系统，（虽然文章让人很不爽，但是能用起来的都是牛逼方法）<br />
+直接看原文描述：</p>
+<blockquote>
+<p>我们的系统已经在T4/A10 GPU机器上运行了六个多月，无缝集成到一个广泛使用的信息应用程序的搜索和推荐系统中，每天有超过1亿用户。包括两个基本部分，即离线和在线组件，我们的系统有效地管理准备好的数据和实时矢量插入任务。离线段专用于处理准备好的数据，而在线段编排实时向量插入操作</p>
+</blockquote>
+<blockquote>
+<p>在线段由多个CPU线程管理，并与Kafka接口进行消息摄取，它实现了一个动态的队列策略，在将聚合的批次分派给GPU之前，每秒或在达到128次插入的倍数的阈值时聚合向量，上限为1024。在内核执行之前，我们仔细地从资源池中分配了32个独立的资源，每个资源都配备了50 MB的缓存内存，如前所述。在临时内存需求超过此阈值的情况下，额外的内存将从中央池中获得，每个分配设置为200 MB。为了确保公平的资源分配，特别是在高QPS条件下，我们设计了无锁队列机制。当所有32个资源用尽时，请求被拒绝。此外，我们为载体插入任务建立了专用流，以简化处理。</p>
+</blockquote>
+<p>实际执行算法时有一些细节还是需要注意，不算是trick，只能说作者没在method里面提到过，但是很重要。</p>
+<p><strong>高地址分配策略进行搜索，低地址插入。</strong>（看不懂，原文就这一句，乐）</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/references/ann/second-Tier-memory/second-Tier-memory.html">
+                            <span class="icon"></span>
+                            <span class="label">second-Tier-memory</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/docs/references/no_translate.html?ref=ann/runmmy/runmmy.html&from=/docs/references/ann/runmmy/runmmy.html">
+                            <span class="label">runmmy</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>pyside6 开发 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">blkrv</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">进阶</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">python</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>pyside6 开发</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%AE%89%E8%A3%85">安装</h2>
+<p><code>pip install pyside6</code></p>
+<h2 id="%E6%89%93%E5%BC%80pyside-designer">打开pyside-designer</h2>
+<p><code>pyside6-designer</code></p>
+<h2 id="ui%E8%BD%ACpython%E4%BB%A3%E7%A0%81">ui转python代码</h2>
+<p><code>pyside6-uic untitled.ui &gt; widget.py</code></p>
+<h2 id="%E5%AE%9E%E4%BE%8B%E5%8C%96ui">实例化ui</h2>
+
+<pre class="language-python"><code class="language-python">class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+
+        # 创建 UI 实例并设置到当前窗口
+        self.ui = Ui_MainWindow()#这个Ui_MainWindow就是我们创建的ui
+        self.ui.setupUi(self)
+
+        # 添加自定义逻辑
+        self.ui.pushButton.clicked.connect(self.on_button_clicked)
+
+    def on_button_clicked(self):
+        print(&quot;按钮被点击了！&quot;)
+if __name__==&quot;__main__&quot;:
+    app=QApplication(sys.argv)
+
+    mainWindow=MainWindow()
+
+    mainWindow.show()
+
+    app.exec()
+</code></pre>
+<h2 id="%E5%88%9B%E5%BB%BA%E6%89%98%E7%9B%98%28%E5%88%9B%E5%BB%BA%E8%8F%9C%E5%8D%95%29">创建托盘(创建菜单)</h2>
+
+<pre class="language-python"><code class="language-python"># 创建系统托盘图标
+self.tray_icon = QSystemTrayIcon(self)
+self.tray_icon.setIcon(QIcon(&quot;icon.png&quot;))  # 设置托盘图标，替换为你的图标路径
+
+# 创建托盘菜单
+self.tray_menu = QMenu()
+
+# 添加显示窗口选项
+show_action = QAction(&quot;Show Window&quot;, self)
+show_action.triggered.connect(self.show_window)
+self.tray_menu.addAction(show_action)
+
+# 添加退出选项
+exit_action = QAction(&quot;Exit&quot;, self)
+exit_action.triggered.connect(self.close_application)
+self.tray_menu.addAction(exit_action)
+
+# 将菜单绑定到托盘图标
+self.tray_icon.setContextMenu(self.tray_menu)
+
+# 显示托盘图标
+self.tray_icon.show()
+</code></pre>
+<h2 id="%E7%AA%97%E5%8F%A3%E5%B1%9E%E6%80%A7">窗口属性</h2>
+<ul>
+<li>窗口置底</li>
+</ul>
+
+<pre class="language-python"><code class="language-python">self.setWindowFlags(Qt.WindowStaysOnBottomHint)
+</code></pre>
+<ul>
+<li>窗口无边框化</li>
+</ul>
+
+<pre class="language-python"><code class="language-python">self.setWindowFlags(Qt.FramelessWindowHint)
+</code></pre>
+<ul>
+<li>隐藏任务栏图标</li>
+</ul>
+
+<pre class="language-python"><code class="language-python">self.setWindowFlags(Qt.Tool)
+</code></pre>
+<h2 id="%E5%8A%A8%E6%80%81%E6%8F%92%E5%85%A5%E5%AD%90%E9%83%A8%E4%BB%B6">动态插入子部件</h2>
+
+<pre class="language-python"><code class="language-python">new_todo=Todo(self)
+new_todo.setText(text)
+self.ui.lineEdit.clear()
+self.ui.scrollVLayout.insertWidget(1,new_todo)
+</code></pre>
+<h2 id="%E8%83%8C%E6%99%AF%E7%AA%97%E5%8F%A3%E5%9C%86%E8%A7%92">背景窗口圆角</h2>
+
+<pre class="language-python"><code class="language-python">def paintEvent(self, event):
+        # 创建一个 QPainter 对象并指定绘制设备为当前窗口
+        painter = QPainter(self)
+        # 设置绘制选项为反锯齿，使绘制的图形边缘更加平滑
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+        # 设置画刷颜色为白色
+        painter.setBrush(QBrush(QColor(255, 255, 255)))
+        # 设置画笔颜色为透明，即不绘制边框线
+        painter.setPen(Qt.GlobalColor.transparent)
+        # 获取当前窗口的矩形区域
+        rect = self.rect()
+        # 绘制圆角矩形，圆角半径为 15
+        painter.drawRoundedRect(rect, 15, 15)
+        &quot;&quot;&quot; 通过遮罩设置窗口为圆角矩形 &quot;&quot;&quot;
+        path = QPainterPath()
+        rect = QRect(0, 0, self.width(), self.height())
+        radius = 15  # 圆角半径
+        path.addRoundedRect(rect, radius, radius)
+        # 使用 QRegion 进行裁剪
+        region = QRegion(path.toFillPolygon().toPolygon())
+        self.setMask(region)
+</code></pre>
+<p>不设置遮罩将会出现四个黑角，反正通用框架基于系统的窗口管理器必定出现许多问题</p>
+<h2 id="QCharts">QCharts</h2>
+<p>太杂了，不太好说</p>
+<h2 id="QSS">QSS</h2>
+
+<pre class="language-css"><code class="language-css">QPushButton {
+    background-color: #4CAF50;  /* 设置按钮背景颜色 */
+    color: white;  /* 设置按钮文本颜色 */
+    border: none;
+    padding: 5px 10px;
+}
+QPushButton:hover {
+    background-color: #45a049;  /* 设置按钮悬停时的背景颜色 */
+}
+</code></pre>
+<h2 id="%E5%BC%B9%E5%87%BA%E8%BE%93%E5%85%A5%E6%A1%86">弹出输入框</h2>
+
+<pre class="language-python"><code class="language-python"># 创建一个 QInputDialog
+        input_dialog = QInputDialog(self)
+        input_dialog.setWindowTitle(&quot;修改文本&quot;)
+        input_dialog.setLabelText(&quot;请输入新的文本：&quot;)
+        input_dialog.setTextValue(self.text())  # 设置默认值为当前文本
+        # 显示对话框并获取用户输入
+        if input_dialog.exec() == QInputDialog.Accepted:
+            new_text = input_dialog.textValue()
+            if new_text:
+                self.setText(new_text)
+</code></pre>
+<h2 id="%E6%9C%AC%E6%96%87%E8%AE%BE%E7%BD%AE%E5%88%A0%E9%99%A4%E7%BA%BF">本文设置删除线</h2>
+
+<pre class="language-python"><code class="language-python">def setStrike(self,ifstrikeout:bool):
+    font = self.font()
+    font.setStrikeOut(ifstrikeout)  # 移除删除线
+    self.setFont(font)
+</code></pre>
+<h2 id="%E5%B0%86%E7%AA%97%E5%8F%A3%E5%B5%8C%E5%85%A5%E6%A1%8C%E9%9D%A2">将窗口嵌入桌面</h2>
+
+<pre class="language-python"><code class="language-python">def set_desktop_window(self):
+    # 获取桌面窗口的句柄
+    hwnd = ctypes.windll.user32.FindWindowW(&quot;Progman&quot;, &quot;Program Manager&quot;)
+    if hwnd:
+        # print(&quot;setdesktopparent&quot;)
+        # 获取当前窗口的句柄
+        win_hwnd = self.window.winId()
+        # 将当前窗口设置为桌面窗口的子窗口
+        ctypes.windll.user32.SetParent(win_hwnd, hwnd)
+</code></pre>
+<p>需要注意的是，嵌入桌面后，如果使用setStyleSheet(&quot;background: transparent;&quot;)，背景将会变为纯黑（windows，预估是windows窗口管理器搞的鬼）</p>
+<p>如果setAttribute(Qt.WA_TranslucentBackground),窗口上的空间将不再发生变化（难蚌）</p>
+<p>解决！！！</p>
+
+<pre class="language-python"><code class="language-python">查找到program manager窗口的句柄
+progman_hwnd = ctypes.windll.user32.FindWindowW(&quot;Progman&quot;, &quot;Program Manager&quot;)
+if not progman_hwnd:
+    print(&quot;Failed to find Progman window&quot;)
+    return
+# 2. 发送 0x52C 消息，触发桌面窗口重新排列
+ctypes.windll.user32.SendMessageW(progman_hwnd, 0x52C, 0, 0)
+# 3. 查找 WorkerW 窗口
+self.workerw_hwnd = ctypes.c_int(0)
+
+def enum_windows_callback(hwnd, lParam):
+    # 查找 WorkerW 窗口
+    if ctypes.windll.user32.FindWindowExW(hwnd, None, &quot;SHELLDLL_DefView&quot;, None):
+        # self.workerw_hwnd = ctypes.windll.user32.FindWindowExW(None, hwnd, &quot;WorkerW&quot;, None)
+        self.workerw_hwnd=hwnd
+    return True
+# 将 Python 回调函数转换为 C 回调函数
+# 定义回调函数类型
+WNDENUMPROC = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
+enum_windows_proc = WNDENUMPROC(enum_windows_callback)
+# 枚举所有窗口
+ctypes.windll.user32.EnumWindows(enum_windows_proc, 0)
+if not self.workerw_hwnd:
+    print(&quot;Failed to find WorkerW window&quot;)
+    return
+# 4. 将当前窗口设置为 WorkerW 的子窗口
+win_hwnd = self.window.winId()
+ctypes.windll.user32.SetParent(win_hwnd, self.workerw_hwnd)
+# 5. 确保窗口可见
+ctypes.windll.user32.ShowWindow(win_hwnd, 1)  # SW_SHOWNORMAL
+</code></pre>
+<p>最根本的问题在于，有部分设备的program manager与worker是分离的，其中一个worker是管理桌面图标的，另一个worker是透明背景，而program manager是桌面总窗口。</p>
+<p>如下的spy视图</p>
+<p><img src="image.png" alt="alt text" /></p>
+<p>我们之前是将我们的窗口加入program manager，这会造成worker的层级在我们窗口之上，我们的就被挡住了，现在我们先向program manager发送0x52c将program manager拆出workerw，此时将我们的窗口作为workerw的子窗口，注意，需要时包含shelldlldelview的workerw，否则也会被遮挡。如果想做桌面壁纸，那就将窗口作为另一个worker的子窗口。添柴！</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/tutorial/c++/makefile/index.html">
+                            <span class="icon"></span>
+                            <span class="label">makefile</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/tutorial/somethingInteresting/officeAi/index.html">
+                            <span class="label">officeAi</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

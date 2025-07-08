@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>cmake - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">blkrv</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">进阶</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/docs/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">c++</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>cmake</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E7%9B%B8%E5%85%B3%E6%8C%87%E4%BB%A4%E5%8A%9F%E8%83%BD">相关指令功能</h2>
+<h3 id="set">set</h3>
+<p>功能：设置变量</p>
+<p>用法：</p>
+<p>1,一般变量</p>
+<p><code>set(normal &quot;normalValue&quot;)</code></p>
+<p>2,缓存变量</p>
+
+<pre class="language-cmake"><code class="language-cmake">set(MY_VARIABLE &quot;Hello, World!&quot; CACHE STRING &quot;A greeting message&quot; FORCE)
+message(&quot;${MY_VARIABLE}&quot;)   # 输出Hello, World!
+
+set(MY_VARIABLE &quot;Good Morning!&quot; CACHE STRING &quot;A greeting message&quot;)
+message(&quot;${MY_VARIABLE}&quot;)   # 输出Hello, World!因为不加FORCE默认不覆盖
+
+set(MY_VARIABLE &quot;Good Morning!&quot; CACHE STRING &quot;A greeting message&quot; FORCE)
+message(&quot;${MY_VARIABLE}&quot;)   # 输出Good Morning! 加了FORCE强制覆盖
+</code></pre>
+<p>存储在CMakeCache当中，可以跨越多次编译，持久化存储。</p>
+<p>3,环境变量</p>
+<p><code>set(ENV{&lt;variable&gt;} [&lt;value&gt;])</code></p>
+<p><code>unset(ENV{&lt;variable&gt;})</code></p>
+
+<pre class="language-cmake"><code class="language-cmake"># 设置一个名为 MY_VARIABLE 的环境变量，其值为 Hello World：
+set(ENV{MY_VARIABLE} &quot;Hello World&quot;)
+</code></pre>
+<p>可以用于在不同cmakelist之间传递变量，但是不可持久化储存</p>
+<h3 id="file">file</h3>
+<p>1,READ</p>
+<p>读取文件（filename）的内容保存到变量（variable）中；</p>
+<p>file(READ config.cmake contents)</p>
+<p>2,STRINGS</p>
+<p>解析filename中的ASCII字符串列表，并将其存储在中。忽略文件中的二进制数据。忽略回车(\r, CR)字符；</p>
+<h3 id="execute_process">execute_process</h3>
+<p>通过execute_process方法可以执行多个子进程。</p>
+<p>命令COMMAND会并行执行，每个子进程的标准输出映射到下一个进程的标准输入上，所有进程共用standard error管道。</p>
+<p><code>execute_process(COMMAND rm -rf ${ASCEND_AUTOGEN_PATH}/${CUSTOM_COMPILE_OPTIONS} COMMAND touch ${ASCEND_AUTOGEN_PATH}/${CUSTOM_COMPILE_OPTIONS})</code></p>
+<h3 id="function">function</h3>
+
+<pre class="language-cmake"><code class="language-cmake">function(&lt;name&gt; [&lt;arg1&gt; ...])
+  &lt;commands&gt;
+endfunction([&lt;name&gt;])
+</code></pre>
+
+<pre class="language-cmake"><code class="language-cmake">function(get_system_info SYSTEM_INFO)
+  if (UNIX)
+    execute_process(COMMAND grep -i ^id= /etc/os-release OUTPUT_VARIABLE TEMP)
+  elseif (WIN32)
+    message(STATUS &quot;System is Windows. Only for pre-build.&quot;)
+  else ()
+    message(FATAL_ERROR &quot;${CMAKE_SYSTEM_NAME} not support.&quot;)
+  endif ()
+endfunction()
+</code></pre>
+<h3 id="string">string</h3>
+<p>操作字符串</p>
+<p><a href="https://zhuanlan.zhihu.com/p/661283261"  target="_blank">具体教程</a></p>
+<h3 id="%24%26lt%3B...%26gt%3B">$&lt;...&gt;</h3>
+<p>1,检查变量 SOC_VERSION 的值是否在列表 CUSTOM_ASCEND310P_LIST 中</p>
+<p>2,将上一步的结果强制转换为布尔类型（0 或 1）</p>
+<p>3,如果条件为 True，则返回值 CUSTOM_ASCEND310P；否则不返回任何内容。</p>
+
+<pre class="language-cmake"><code class="language-cmake">ascendc_compile_definitions(ascendc_kernels_${RUN_MODE} PRIVATE
+    $&lt;$&lt;BOOL:$&lt;IN_LIST:${SOC_VERSION},${CUSTOM_ASCEND310P_LIST}&gt;&gt;:CUSTOM_ASCEND310P&gt;
+)
+</code></pre>
+<h3 id="get_filename_component">get_filename_component</h3>
+<p>get_filename_component 函数用于获取文件名或目录的各个部分，如文件名、扩展名、目录等。</p>
+
+<pre class="language-cmake"><code class="language-cmake">get_filename_component(filename ${filepath} NAME)
+get_filename_component(directory ${filepath} DIRECTORY)
+
+message(STATUS &quot;File Name: ${filename}&quot;)
+message(STATUS &quot;Directory: ${directory}&quot;)
+</code></pre>
+<h3 id="ExternalProject">ExternalProject</h3>
+<p>ExternalProject是CMake提供的另一个模块，用于在构建时下载、配置、构建和安装外部项目（即不是作为当前CMake项目一部分的项目）。</p>
+<p>ExternalProject模块通过以下主要步骤实现其功能：</p>
+<ol>
+<li>下载源代码：在构建过程中下载外部项目的源代码。可以指定URL、Git仓库、SVN仓库等多种来源。</li>
+<li>配置项目：对下载的外部项目进行配置，包括设置构建选项和参数。</li>
+<li>构建项目：构建外部项目，生成需要的二进制文件或库。</li>
+<li>安装项目：将构建的项目安装到指定位置，以便于主项目使用。</li>
+</ol>
+<p>基本步骤：</p>
+<ol>
+<li>引入ExternalProject模块：</li>
+</ol>
+<p>在CMakeLists.txt文件中使用include(ExternalProject)命令来启用ExternalProject模块的功能。<br />
+2. 声明外部项目：<br />
+使用ExternalProject_Add函数声明一个外部项目，指定其源代码来源、配置选项、构建命令、安装位置等。<br />
+3. 配置依赖关系（可选）：<br />
+如果外部项目依赖于其他项目或特定的构建步骤，可以使用add_dependencies命令来配置这些依赖关系。<br />
+4. 使用安装的依赖：<br />
+一旦外部项目被构建和安装，其产物（如库、可执行文件等）就可以在主项目中被使用。</p>
+<h3 id="add_library">add_library</h3>
+<p>编译生成库文件</p>
+<h3 id="target_compile_options">target_compile_options</h3>
+<p>target_compile_options 指令用于为指定的目标添加编译器选项。通过这些选项，可以影响编译器如何处理目标的源代码。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/tutorial/c++/fltk/index.html">
+                            <span class="icon"></span>
+                            <span class="label">cmake</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/docs/tutorial/c++/makefile/index.html">
+                            <span class="label">makefile</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

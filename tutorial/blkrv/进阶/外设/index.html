@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>外设 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="active_parent no_link"><a><span class="label">blkrv</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">进阶</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>外设</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E8%99%9A%E6%8B%9F%E6%8A%BD%E8%B1%A1">虚拟抽象</h2>
+<p><img src="image.png" alt="alt text" /></p>
+<h2 id="%E5%8D%8F%E8%AE%AE">协议</h2>
+<p>所有的外设均是经过简化的设备，对于现实设备不具备参考价值，我们自定义了大量的控制寄存器与数据寄存器等。</p>
+<ul>
+<li><p>bios</p>
+<ul>
+<li><p>说明</p>
+<p>pc寄存器初始为0，程序将从bios的0地址开始执行。</p>
+</li>
+<li><p>地址空间</p>
+<p>0x00000000-0x00100000</p>
+</li>
+</ul>
+</li>
+<li><p>ram</p>
+<ul>
+<li><p>说明</p>
+<p>可扩展内存控制器，需要注意某些耦合设备实现，例如ram等。</p>
+</li>
+<li><p>地址空间</p>
+<p>0x00100000-0x10100000</p>
+</li>
+</ul>
+</li>
+<li><p>keyboard</p>
+<ul>
+<li><p>地址空间</p>
+<p>0x10100000-0x10200000</p>
+</li>
+<li><p>driver</p>
+<p>键盘按下时产生中断，0x10100000地址处将会存储三个字符缓存。</p>
+</li>
+</ul>
+</li>
+<li><p>screen（字符输出设备）</p>
+<ul>
+<li><p>地址空间</p>
+<p>0x10200000-0x20200000</p>
+</li>
+<li><p>driver</p>
+<p>0x10200003写入1时触发输出，screen设备将会将0x10200004后的字符输出到宿主机终端。</p>
+</li>
+</ul>
+</li>
+<li><p>gpu</p>
+<ul>
+<li><p>说明</p>
+<p>gpu设备并不具备通用并行计算能力，但是可以扩展，绘图功能被限制，也可以扩展</p>
+<p>该设备贴图时为了性能需求，将会直接从flash读取文件内容，这与文件系统强绑定。</p>
+</li>
+<li><p>地址空间</p>
+<p>0x20200000-0x30200000</p>
+</li>
+<li><p>driver</p>
+<p>0x20200000为控制寄存器地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+  <th>写入信号</th>
+  <th>对应功能</th>
+  <th>数据寄存器功能与地址偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>绘制文字</td>
+  <td>4:x;8:y;12:r;16:g;20:b;24:font_size</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>绘制三角形</td>
+  <td>4:x0;8:y0;12:x1;16:y1;20:x2;24:y2;28:r;32:g;36:b</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>刷新屏幕</td>
+  <td></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>绘制jpg</td>
+  <td>4:x;8:y;12:image_file_size;16:inode_id</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>绘制png</td>
+  <td>4:x;8:y;12:image_file_size;16:inode_id</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>nic</p>
+<ul>
+<li><p>说明</p>
+<p>该设备可以理解为对socket的简化封装，也可以自己实现完整的计算机网络体系结构内容得到更高的网络带宽。</p>
+<p>nic设备采用dma，直接操作ram。</p>
+</li>
+<li><p>地址空间</p>
+<p>0x30200000-0x40200000</p>
+</li>
+<li><p>drivers</p>
+<p>0x30200000为控制寄存器地址</p>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+  <th>写入信号</th>
+  <th>对应功能</th>
+  <th>数据寄存器功能与地址偏移</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>accept</td>
+  <td>0-16:ip;20:port;24:protocol;28:return sockfd</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>send</td>
+  <td>4:sockfd;8:send_data_ram_addr;12:data_len</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>recv</td>
+  <td>4:sockfd;8:send_data_ram_addr;12:data_len</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>connect</td>
+  <td>0-16:ip;20:port;24:protocol;28:return sockfd</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>close</td>
+  <td>4:sockfd</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>flash</p>
+<ul>
+<li><p>地址空间</p>
+<p>0x40200000-0x60200000</p>
+</li>
+</ul>
+</li>
+<li><p>pmc</p>
+<ul>
+<li><p>地址空间</p>
+<p>0x60200000-0x60300000</p>
+</li>
+<li><p>driver</p>
+<p>0x60200000为控制寄存器，向该地址写入任何信号都会触发关机。</p>
+</li>
+</ul>
+</li>
+<li><p>monitor</p>
+<ul>
+<li><p>地址空间</p>
+<p>0x60300000-0x60400000</p>
+</li>
+<li><p>drivers</p>
+<p>0x60300000为控制寄存器地址</p>
+<p>当向控制寄存器地址写入1时触发监测器的启动，此时开始进行性能数据的采集。</p>
+<p>写入1后写入0，将会触发监测器的关闭，并将数据存储至宿主机。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/tutorial/blkrv/进阶/wrapper/index.html">
+                            <span class="icon"></span>
+                            <span class="label">wrapper</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/tutorial/blkrv/进阶/寄存器/index.html">
+                            <span class="label">寄存器</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

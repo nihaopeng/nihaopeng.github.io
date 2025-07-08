@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>moe parallelism - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">algorithms</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/references/algorithms/ann/ann.html"><span class="label">ANN</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/algorithms/moe/index.html"><span class="label">moe</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/algorithms/transformer/index.html"><span class="label">transformer</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ann</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/references/ann/faastube/faastube.html"><span class="label">faastube</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/ann/fusionANNS/fusionANNs.html"><span class="label">fusionANNS</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/ann/second-Tier-memory/second-Tier-memory.html"><span class="label">second-Tier-memory</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/ann/a_realtime_adaptive_multi_stream_GPU_system/adaptive_multi_stream.html"><span class="label">adaptive_multi_stream</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/no_translate.html?ref=ann/runmmy/runmmy.html&from=/references/ann/runmmy/runmmy.html"><span class="label">runmmy</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">moe</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/references/no_translate.html?ref=moe/Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts/index.html&from=/references/moe/Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts/index.html"><span class="label">Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/references/moe/deepseekMoe/index.html"><span class="label">deepseek Moe</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/references/moe/parallel_method/index.html"><span class="label">moe_parallel_method</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>moe parallelism</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="GShard">GShard</h2>
+<p><a href="https://arxiv.org/pdf/2006.16668"  target="_blank">论文链接</a></p>
+<p>论文中提到超过千台设备上的A naive graph representation将会成为计算的瓶颈。</p>
+<p><img src="image.png" alt="alt text" /></p>
+<p>对模型不同层进行分区，通过设备间通讯的方式同步参数将会涉及到底层通信机制的改变，对于开发者是一个严重的负担。</p>
+<p>GShard是一个XLA的编译器扩展，简单来说就是按照其api规范添加注释，这个编译器会自动将模型进行分区，然后并行化。</p>
+<p><img src="image-1.png" alt="alt text" /></p>
+<h3 id="%E5%A4%9AFFN%E8%B7%A8%E8%AE%BE%E5%A4%87">多FFN跨设备</h3>
+<p><img src="image-2.png" alt="alt text" /></p>
+<p>如图，feed forward被替换为多个expert，当采用多设备计算时，除开ffn部分，其余部分都是被复制到多台设备上。</p>
+<p>3.2节再次提到，将注意力层复制到多个设备上，多个专家进行分割，分割到多台设备，因此，对于一台设备上的数据流，则类似原版的transformer。</p>
+<p>每个router副本与每个expert进行all-to-all通信，容易理解。（糖丸了，all-to-all通信，这通信开销得多大啊）</p>
+<h3 id="%E8%87%AA%E5%8A%A8%E5%88%86%E7%89%87">自动分片</h3>
+<p>因为是利用了2048个TPU，那么如何利用tensor计算能力就很重要了，所以论文里面将tensor运算进行抽象，让用户将整个计算集群看作单个设备，只用加注释进行数据分片，至于哪些分片到哪个计算unit是系统负责的。我们主要探索分布式下的性能，所以不做过多探索。</p>
+<h2 id="switch-transformer">switch transformer</h2>
+<p><a href="https://arxiv.org/pdf/2101.03961"  target="_blank">论文链接</a></p>
+<p>传统的moe将一个token路由到了多个专家，并将多个专家的输出乘以偏好进行输出，（也就是偏好决定了专家输出的重要性）。</p>
+<p><img src="image-3.png" alt="alt text" /></p>
+<p>本文rethinking这个操作，使k=1，（乐）</p>
+<h3 id="%E8%BE%85%E5%8A%A9%E6%8D%9F%E5%A4%B1">辅助损失</h3>
+<p><img src="image-4.png" alt="alt text" /></p>
+<p>以上用于路由平衡，确保专家分配token的平衡，保证token dropped率低的情况下，减少expert容量。</p>
+<h3 id="%E4%B8%8D%E5%90%8C%E5%B9%B6%E8%A1%8C%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94">不同并行方式对比</h3>
+<p><img src="image-5.png" alt="alt text" /></p>
+<p>上面一排是权重参数在不同core上的分布，下面一排是数据在不同核上的分布。</p>
+<p>直接看最后一个红框，按理说是最复杂的，对于上面的4×4方格，也就是16个core，不同颜色代表不同的权重参数，这里比较难理解，我看网上有的作者认为，对于第一个蓝色的块，里面是有四个expert的，他们作为一个整体在被处理，但是这样逻辑说不通。我更倾向于认为，一个块代表的一个expert，对于下面的数据分配，蓝色的块都是同一批数据，也就是比如[x1,x2,x3,x4]这么一组数据被复制到四个核上。</p>
+<p>那么单个核的计算流程就变成了，一个批次的数据被input时，该核拥有一个专家的一部分参数，对应参数与数据中对应的部分计算后后，四个核的数据进行reduce，那么通信就被局限在了四个核中，从而减少了一定的通信量。</p>
+<h2 id="%E5%85%B6%E4%BB%96">其他</h2>
+<p>显然，直接对transformer进行分层然后分配设备进行pipeline计算一定有相关课题，不做过多赘述。</p>
+<h2 id="%E6%A2%B3%E7%90%86">梳理</h2>
+<p>那么从头看moe在多设备上的计算，从inference到back propagation。以每个设备分配一个专家为例。</p>
+<ul>
+<li>1，tokens被输入到模型，并进入device 0</li>
+<li>2，经过注意力模块计算，sync with other devices</li>
+<li>3，token经过router，得到输入每个expert的偏好值</li>
+<li>4，根据偏好值得到top-k个需要被激活的expert。</li>
+<li>5，将token投入这k个expert，注意到expert在其他设备上，因此这里面临第一重通信，tokens的传输。</li>
+<li>6，expert计算得到output后，所有的expert的output进行规约，那么这里面临第二重通信，output的传输。（还有个输入的残差结构的通信在上一重已经进行了）</li>
+<li>7，得到总的output后通过label得到loss，loss反向更新expert参数，expert反向的梯度将会更新router的参数，注意：router都是复制的副本，因此这里涉及第三重通信，gradient的传输/新parameters的传输</li>
+<li>8，梯度传到注意力模块，再次进行参数更新，产生gradient的传输/新parameters的传输</li>
+</ul>
+<p>从以上过程看，一旦设备数过多，那么就会产生大量的设备间通信。</p>
+<p>需要注意的是，以上只是一个基础的过程，实际执行中不同设备同一时刻的输入tokens可能是不同batch的数据，此时多设备间进行梯度合并更新参数。不同的策略将会极大的影响moe的效率。</p>
+<p>那么问题转移到了，怎么平衡计算与通信，如果看计算的极端，就是让每个设备都维护一份gradient，从而单独计算从而更新参数；那么通信的极端就是只让一个主机进行计算，其余从机继续向下一个状态转移，主机计算完成后，通知从机更新后的参数。</p>
+<h2 id="dualPipe">dualPipe</h2>
+<p>直接讲主要方法，</p>
+<p>关于双路pipeline，如下：</p>
+<p><img src="image-8.png" alt="alt text" /></p>
+<p>上面是常规的流水（8卡），将整个网络中的layer平等的分为8份，每一份放在一张卡上，例如GPU0持有layer0-9，GPU1持有layer10-19，以此类推。</p>
+<p>那么对于上面一部分，训练流程如下：</p>
+<ul>
+<li>1，batch0输入GPU0，layer进行inference，将output传输到GPU1，以此类推，直到layer7得到输出。</li>
+<li>2，计算loss</li>
+<li>3，从layer7开始反向传播，将gradients传输到GPU6，以此类推，传输的同时进行参数更新。</li>
+<li>4，循环以上步骤</li>
+</ul>
+<p>通过调整forward与backward的顺序，能够减少流水线中的气泡，例如1F1B，ZB-PP等。</p>
+<p>因此引出下面一部分，我们需要结合论文中提到的Overlapping strategy来看：</p>
+<p><img src="image-6.png" alt="alt text" /></p>
+<p>上面的图是dualpipe中的pp方式，可以注意到的是，GPU0，GPU7同时持有layer0，那么我们在一开始可以同时输入两个batch分别到GPU0与GPU1<br />
+需要注意的是，这种操作单独来看并没有什么太大的作用，因为每个GPU同一时刻的计算能力仅能够负载一个layer的forward/backward。好就好在dualpipe中设计了下面流水块。</p>
+<p>我们需要知道在单个GPU内，通信与计算是独立的，意味着这两者也可以形成流水，所以dualpipe设计了下面的流水方式。</p>
+<p><img src="image-7.png" alt="alt text" /></p>
+<p>上面是一个紧密的流水块，怎么来的？看下面的流水线，可以注意到，两头batch输入，同时采用FB交替的方式进行流水，在流水线的中间部分就会“产生”这样的块。</p>
+<p>（节奏大师）</p>
+<p><img src="image-9.png" alt="alt text" /></p>
+<h2 id="%E6%95%B4%E4%BD%93%E5%88%86%E5%B8%83">整体分布</h2>
+<p>那么综合以上的并行结构，粗略的总结一个整体的分布式架构（或者pp在节点间进行？）：</p>
+<p><img src="image-10.png" alt="alt text" /></p>
+<p>expert位于多个节点上，由于每一个batch的数据不同，router产生的结果也不同，导致每一次激活的expert也不同，因此，不可避免的，采用all-2-all通信是最佳选择。</p>
+<blockquote>
+<p>一个问题是，为什么不在节点间流水？因为每个expert并不是每一次都会被激活，直觉上router产生的节点间的通信带宽需求远远小于pp中的数据传递。</p>
+</blockquote>
+<blockquote>
+<p>同时也可以注意到，之前的主要瓶颈在于节点间的通信，因此负载均衡loss func的提出才能有效的提升整体的效率。</p>
+</blockquote>
+<p>那么所谓的拓扑架构也就不再存在，因为不存在一个数据跨越多个节点传输的问题。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/references/moe/deepseekMoe/index.html">
+                            <span class="icon"></span>
+                            <span class="label">deepseek Moe</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

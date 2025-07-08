@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>telechat-12B移植 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active with_link"><a href="/projects/ascend_matrix/index.html"><span class="label">ascend_matrix</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/ftp-design/ftp-cjc.html"><span class="label">ftp-design</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/IntelligentAudioChat/index.html"><span class="label">IntelligentAudioChat</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">riscv-telechat-openeuler</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/projects/riscv-telechat-openeuler/openeuler/openeuler.html"><span class="label">openeuler</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/projects/riscv-telechat-openeuler/telechat移植/telechat.html"><span class="label">telechat移植</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/projects/sd1.5-fine-tuning/sd.html"><span class="label">sd1.5-fine-tuning</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/projects/tinytodo/index.html"><span class="label">tinytodo</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>telechat-12B移植</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E4%BB%8Ehf-mirror%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B">从hf mirror下载模型</h2>
+<p>别问我为啥不在hf官网，梯子流量够用随便搞</p>
+<ul>
+<li>download hfd,a tool to download base on aria2</li>
+</ul>
+<p><code>wget https://hf-mirror.com/hfd/hfd.sh</code><br />
+<code>chmod a+x hfd.sh</code></p>
+<ul>
+<li>设置hugginface下载环境变量</li>
+</ul>
+<p><code>export HF_ENDPOINT=https://hf-mirror.com</code></p>
+<ul>
+<li>下载模型</li>
+</ul>
+<p><code>./hfd.sh Tele-AI/TeleChat-12B --tool aria2c -x 4</code></p>
+
+<pre class="language-none"><code class="language-none">&gt;出现报错看下面的教程
+
+</code></pre>
+<ul>
+<li>下载数据集（用于记录，不用执行）</li>
+</ul>
+<p><code>./hfd.sh wikitext --dataset --tool aria2c -x 4</code></p>
+<h2 id="aria%E7%BC%96%E8%AF%91">aria编译</h2>
+<p>如果你跟着上面的步骤走，那一定会到这里，因为yum源没有aria2安装包，乐</p>
+<ul>
+<li>克隆aria2源码</li>
+</ul>
+<p><code>git clone https://github.com/aria2/aria2.git</code></p>
+<ul>
+<li>build</li>
+</ul>
+<p><code>autoreconf -i</code><br />
+autoreconf装了运行不了，缺少autopoint<br />
+    + yum install gettext-devel</p>
+<p>装依赖</p>
+<p><code>yum install openssl-devel zlib zlib-devel</code></p>
+<p><code>./configure ARIA2_STATIC=yes</code></p>
+<p>error:A compiler with support for C++11 language features is required.<br />
+    + solution:yum install g++</p>
+<p><code>make install -j4</code></p>
+<h2 id="git-lfs%E7%BC%96%E8%AF%91">git-lfs编译</h2>
+<p>如果你跟着上面的步骤走，那一定会到这里，因为git-lfs妹有riscv64版本的，蚌</p>
+<ul>
+<li>安装go</li>
+</ul>
+<p><code>yum install golang</code></p>
+<ul>
+<li>编译</li>
+</ul>
+<p>1,克隆git-lfs<br />
+2,<code>go env -w GOPROXY=https://goproxy.cn</code><br />
+3,添加bin目录到环境变量<br />
+4，执行<code>git lfs install</code></p>
+<h2 id="openeuler-riscv%E4%B8%8A%E7%BC%96%E8%AF%91pytorch">openeuler-riscv上编译pytorch</h2>
+<ul>
+<li>依赖</li>
+</ul>
+<p><code>dnf install python3-{hypothesis,psutil,pyyaml,requests,sympy,filelock,networkx,jinja2,fsspec,packaging,numpy,venv}</code></p>
+<ul>
+<li>下载gitee预编译riscv-whl</li>
+</ul>
+<p><code>git clone --recursive https://github.com/pytorch/pytorch</code>约4个GB，建议用梯子</p>
+<p><code>cd pytorch &amp;&amp; python3 setup.py develop</code></p>
+<ul>
+<li>测试</li>
+</ul>
+<div style="text-align:center;"><img src="QQ20241210-150124.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<h2 id="%E5%AE%89%E8%A3%85transformers">安装transformers</h2>
+<p><code>git clone https://github.com/huggingface/transformers.git</code></p>
+<blockquote>
+<p>下面这句逆天操作据说是ninja和cmake互相依赖导致无限递归的问题，乐</p>
+</blockquote>
+<p><code>dnf install cmake python3-devel</code></p>
+<p>安装rust compiler(逆天)<br />
+<code>export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</code><br />
+<code>export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</code><br />
+<code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></p>
+<p><code>pip install 'transformers[torch]'</code></p>
+<h2 id="%E8%BF%90%E8%A1%8Cpython-inference">运行python inference</h2>
+<ul>
+<li>问题1：需要安装flash-attn，然而该库依赖cuda支持</li>
+</ul>
+<p>修改12B模型中的modeling_telechat.py的357，增加config中的flash-attn判断以取消初始化FlashSelfAttention类产生错误，如下图：</p>
+<div style="text-align:center;"><img src="QQ20241210-223624.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>记得修改config中的参数</p>
+<div style="text-align:center;"><img src="QQ20241211-091833.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<ul>
+<li>修改虚拟环境中.venv/lib/python3.11/site-packages/transformers/generation/utils.py用以显示进度</li>
+</ul>
+<div style="text-align:center;"><img src="QQ20241211-135143.png" style="zoom:70%;border-radius: 10px;border:2px solid #23D18B;padding:10px"/></div>
+<p>推理脚本如下：</p>
+
+<pre class="language-python"><code class="language-python">import os
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
+tokenizer = AutoTokenizer.from_pretrained('../models/12B', trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained('../models/12B', trust_remote_code=True, torch_dtype=torch.float16)
+device = &quot;cpu&quot;
+model.to(device)
+generate_config = GenerationConfig.from_pretrained('../models/12B')
+question=&quot;你好！你是谁？&quot;
+answer, history = model.chat(tokenizer = tokenizer, question=question, history=[], generation_config=generate_config, stream=False)
+print(answer)
+</code></pre>
+<p><code>python3 test.py</code></p>
+<h2 id="huggingface%E8%BD%AC%E4%B8%BAonnx">huggingface转为onnx</h2>
+<p><code>pip install optimum[exporters]</code></p>
+<p><a href="#%E4%BB%8Ehf-mirror%E4%B8%8B%E8%BD%BD%E6%A8%A1%E5%9E%8B"  >下载12B模型</a></p>
+<p><a href="#%E8%BF%90%E8%A1%8Cpython-inference"  >修改推理模型</a></p>
+<p>运行以下脚本转换为onnx格式</p>
+
+<pre class="language-python"><code class="language-python">import os
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import onnx
+import onnxruntime as ort
+import numpy as np
+
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+
+class ModelWrapper(torch.nn.Module):
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
+
+    def forward(self, input_ids, attention_mask):
+        # 显式传入 use_cache=False，确保不使用 past_key_values
+        outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, use_cache=False)
+        # 只返回 logits，以避免复杂的输出结构导致的问题
+        return outputs.logits
+
+def export_model_to_onnx(model_name, output_path, opset_version=13):
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
+    model.eval()
+    model.config.use_cache = False
+
+    text = &quot;This is a sample input for ONNX export.&quot;
+    inputs = tokenizer(text, return_tensors=&quot;pt&quot;)
+
+    # 用包装器替换原始模型
+    wrapped_model = ModelWrapper(model)
+    wrapped_model.eval()
+
+    input_names = [&quot;input_ids&quot;, &quot;attention_mask&quot;]
+    output_names = [&quot;logits&quot;]
+    dynamic_axes = {
+        &quot;input_ids&quot;: {0: &quot;batch_size&quot;, 1: &quot;sequence_length&quot;},
+        &quot;attention_mask&quot;: {0: &quot;batch_size&quot;, 1: &quot;sequence_length&quot;},
+        &quot;logits&quot;: {0: &quot;batch_size&quot;, 1: &quot;sequence_length&quot;}
+    }
+
+    # 导出为 ONNX
+    torch.onnx.export(
+        wrapped_model,
+        args=(inputs[&quot;input_ids&quot;], inputs[&quot;attention_mask&quot;]),
+        f=output_path,
+        input_names=input_names,
+        output_names=output_names,
+        dynamic_axes=dynamic_axes,
+        opset_version=opset_version,
+        export_params=True,
+        do_constant_folding=True,
+    )
+    print(f&quot;模型已成功导出到 {output_path}&quot;)
+
+def validate_onnx_model(model_path, model_name, text):
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
+    model.eval()
+    model.c
+</code></pre>
+<h2 id="onnx%E4%BD%BF%E7%94%A8hhb%E8%BD%AC%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">onnx使用hhb转为二进制可执行文件</h2>
+<h2 id="%E5%88%A9%E7%94%A8npu%E5%8A%A0%E9%80%9F%E6%89%A7%E8%A1%8C">利用npu加速执行</h2>
+<p>目前（2024-12-11）openeuler暂不支持npu。</p>
+<p>2025-3-12, 当前使用openeuler24.03 sp1，已支持npu</p>
+<p>手动挂载驱动，如下：</p>
+
+<pre class="language-bash"><code class="language-bash">insmod /lib/modules/6.6.0-72.0.0.76.oe2403sp1.riscv64/kernel/drivers/soc/xuantie/nna/img_mem/img_mem.ko.xz
+
+modprobe vha onchipmem_phys_start=0xffe0000000 onchipmem_size=0x100000 freq_khz=792000
+
+insmod /lib/modules/6.6.0-72.0.0.76.oe2403sp1.riscv64/kernel/drivers/soc/xuantie/nna/vha/vha_info.ko.xz
+
+chmod a+rw /dev/vha0
+
+lsmod
+</code></pre>
+<p>此时/dev文件夹出现vha0</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/projects/riscv-telechat-openeuler/openeuler/openeuler.html">
+                            <span class="icon"></span>
+                            <span class="label">openeuler</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/projects/sd1.5-fine-tuning/sd.html">
+                            <span class="label">sd1.5-fine-tuning</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

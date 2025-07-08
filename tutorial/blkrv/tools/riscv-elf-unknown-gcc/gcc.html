@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>riscv交叉编译链 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="">
+<li class="not_active no_link"><a><span class="label">blkrv</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">进阶</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>riscv交叉编译链</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-06-02">
+                                    2025-06-02
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85">依赖安装</h2>
+<p>顺序执行以下：<br />
+<a href="https://gmplib.org/"  target="_blank">download gmp</a></p>
+
+<pre class="language-bash"><code class="language-bash">tar -xvjf gmp-6.2.1.tar.bz2
+cd gmp-6.2.1/
+./configure
+make
+make install
+</code></pre>
+<p><a href="https://ftp.gnu.org/gnu/mpfr/"  target="_blank">download mpfr</a></p>
+
+<pre class="language-bash"><code class="language-bash">tar -xvjf mpfr-4.1.0.tar.bz2
+cd mpfr-4.1.0/
+./configure
+make
+make install
+</code></pre>
+<p><a href="https://www.multiprecision.org/mpc/download.html"  target="_blank">download mpc</a></p>
+
+<pre class="language-bash"><code class="language-bash">tar -xvzf mpc-1.2.1.tar.gz
+cd mpc-1.2.1/
+./configure
+make
+make install
+</code></pre>
+<p><a href="https://mirrors.aliyun.com/gnu/gettext/"  target="_blank">download gettext</a></p>
+
+<pre class="language-bash"><code class="language-bash">tar zxvf gettext.tar.gz
+cd gettext
+./configure
+make
+make install
+</code></pre>
+<h2 id="%E5%AE%89%E8%A3%85">安装</h2>
+<p>以下两种方式</p>
+<ul>
+<li>获取预编译版本</li>
+</ul>
+<p>1,通过网盘分享的文件：riscv32.tar.gz<br />
+链接: <a href="https://pan.baidu.com/s/1pf0ikqstdLKcauD90w3KeQ?pwd=b3vt"  target="_blank">https://pan.baidu.com/s/1pf0ikqstdLKcauD90w3KeQ?pwd=b3vt</a> 提取码: b3vt</p>
+<p>2,<code>tar zxvf riscv32.tar.gz</code></p>
+<ul>
+<li>手动编译</li>
+</ul>
+<p>1,<code>git clone --recursive https://github.com/riscv/riscv-gnu-toolchain</code></p>
+<p>fine,你可以选择不递归下载，后续编译会自动下载相关内容。</p>
+<p>2,<code>cd riscv-gnu-toolchain</code></p>
+<p>3,<code>./configure --prefix=/opt/riscv32 --with-arch=rv32i --with-abi=ilp32</code></p>
+<p>上面prefix代表编译完后的文件存放路径，--with-arch=rv32i代表支持riscv-32位-整数指令集，abi是调用规范，使用ilp32，不支持浮点。</p>
+<p>4,<code>make</code></p>
+<h3 id="%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">添加环境变量</h3>
+<p>1,<code>vim ~/.bashrc</code></p>
+<ul>
+<li><p>采用手动编译的，末尾增加<code>export PATH=/opt/riscv32/bin:$PATH$</code>，也就是上面的prefix。</p>
+</li>
+<li><p>采用预编译包的，末尾添加<code>export PATH=/path/to/riscv/bin:$PATH$</code>。/path/to/riscv/也就是riscv文件夹路径</p>
+</li>
+</ul>
+<p>2,按ESC键，输入:wq退出vim编辑器，冒号别少了。</p>
+<p>3,<code>source ~/.bashrc</code></p>
+<p>4,运行<code>riscv32-unknown-elf-gcc --version</code>查看是否有输出</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

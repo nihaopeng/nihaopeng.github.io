@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>CPU寄存器详解 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="active_parent no_link"><a><span class="label">blkrv</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="active_parent no_link"><a><span class="label">进阶</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/docs/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>CPU寄存器详解</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8">通用寄存器</h2>
+<table>
+<thead>
+<tr>
+  <th>寄存器</th>
+  <th>别名</th>
+  <th>全称</th>
+  <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>X0</td>
+  <td>zero</td>
+  <td>零寄存器</td>
+  <td>可做源寄存器(rs)或目标寄存器(rd)</td>
+</tr>
+<tr>
+  <td>X1</td>
+  <td>ra</td>
+  <td>链接寄存器</td>
+  <td>保存函数返回地址</td>
+</tr>
+<tr>
+  <td>X2</td>
+  <td>sp</td>
+  <td>栈指针寄存器</td>
+  <td>指向栈的地址</td>
+</tr>
+<tr>
+  <td>X3</td>
+  <td>gp</td>
+  <td>全局寄存器</td>
+  <td>用于链接器松弛优化（blkos中未启用）</td>
+</tr>
+<tr>
+  <td>X4</td>
+  <td>tp</td>
+  <td>线程寄存器</td>
+  <td>常用于在OS中保存指向进程控制块(task_struct)数据结构的指针（blkos中未启用）</td>
+</tr>
+<tr>
+  <td>X5 ~ X7，X28 ~ X31</td>
+  <td>t0 ~ t6</td>
+  <td>临时寄存器</td>
+  <td></td>
+</tr>
+<tr>
+  <td>X8</td>
+  <td>s0/fp</td>
+  <td>帧指针寄存器</td>
+  <td>用于函数调用，被调用函数需保存数据</td>
+</tr>
+<tr>
+  <td>X9</td>
+  <td>s1</td>
+  <td></td>
+  <td>用于函数调用 ，被调用函数需要保存的数据</td>
+</tr>
+<tr>
+  <td>X10 ~ X17</td>
+  <td>a0 ~ a7</td>
+  <td></td>
+  <td>用于函数调用，传递参数和返回值</td>
+</tr>
+<tr>
+  <td>X18 ~ X27</td>
+  <td>s2 ~ s11</td>
+  <td></td>
+  <td>用于函数调用 ，被调用函数需要保存的数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSR%E5%AF%84%E5%AD%98%E5%99%A8">CSR寄存器</h2>
+<table>
+<thead>
+<tr>
+  <th>寄存器</th>
+  <th>别名</th>
+  <th>全称</th>
+  <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>c305</td>
+  <td>mtvec</td>
+  <td>Machine Trap-Vector Base-Address</td>
+  <td>用于保存中断查询程序地址，需要在系统初始化时通过csr指令赋值</td>
+</tr>
+<tr>
+  <td>c341</td>
+  <td>mepc</td>
+  <td>Machine Exception Program Counter</td>
+  <td>用于保存发生中断时，程序执行的pc，也就是中断地址</td>
+</tr>
+<tr>
+  <td>c342</td>
+  <td>mcause</td>
+  <td>Machine Cause</td>
+  <td>保存中断发生的原因，此处保存的是发生中断的端口</td>
+</tr>
+<tr>
+  <td>c300</td>
+  <td>mstatus</td>
+  <td>Machine Status</td>
+  <td>blkrv中该寄存器仅作为中断使能状态寄存器，低8位是否为1代表是否使能</td>
+</tr>
+<tr>
+  <td>c180</td>
+  <td>satp</td>
+  <td>Supervisor Address Translation and Protection Register</td>
+  <td>保存页表基址</td>
+</tr>
+<tr>
+  <td>c181</td>
+  <td>satp_s_cp</td>
+  <td></td>
+  <td>发生系统调用时，保存satp副本</td>
+</tr>
+<tr>
+  <td>c182</td>
+  <td>satp_i_cp</td>
+  <td></td>
+  <td>发生中断调用时，保存satp副本</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E6%B5%81%E6%B0%B4%E5%AF%84%E5%AD%98%E5%99%A8">流水寄存器</h2>
+<table>
+<thead>
+<tr>
+  <th>寄存器</th>
+  <th>全称</th>
+  <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>pc</td>
+  <td>Program counter</td>
+  <td>用于保存当前执行指令的地址</td>
+</tr>
+<tr>
+  <td>imm</td>
+  <td></td>
+  <td>用于保存解析指令时产生的立即数</td>
+</tr>
+<tr>
+  <td>addr_v</td>
+  <td>virtual address</td>
+  <td>用于保存LOAD/STORE指令等指向的地址</td>
+</tr>
+<tr>
+  <td>data2regs</td>
+  <td></td>
+  <td>用于保存需要存储到通用寄存器的数据</td>
+</tr>
+<tr>
+  <td>data2mem</td>
+  <td></td>
+  <td>用于保存需要存储到内存的数据</td>
+</tr>
+<tr>
+  <td>inst</td>
+  <td>instruction</td>
+  <td>用于保存读取的指令</td>
+</tr>
+</tbody>
+</table>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/tutorial/blkrv/进阶/外设/index.html">
+                            <span class="icon"></span>
+                            <span class="label">外设</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/docs/tutorial/blkrv/进阶/MMU/index.html">
+                            <span class="label">MMU</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>

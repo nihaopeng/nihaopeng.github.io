@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>算子开发教程 - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">blkrv</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">进阶</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/docs/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">ascend</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/c++/fltk/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>算子开发教程</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-05-31">
+                                    2025-05-31
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p><a href="https://www.hiascend.com/edu/courses?activeTab=%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91"  target="_blank">教程</a></p>
+<h2 id="cann%E6%9E%B6%E6%9E%84">cann架构</h2>
+<p><img src="image.png" alt="alt text" /></p>
+<p>cann类似于cuda，因此底层都是基于bisheng/nvcc编译器的。</p>
+<p>算子是通过bisheng编译成动态库的。</p>
+<h2 id="%E7%A1%AC%E4%BB%B6%E6%9E%B6%E6%9E%84">硬件架构</h2>
+<p><img src="image-1.png" alt="alt text" /></p>
+<blockquote>
+<p>AI Core负责执行标量、向量和张量相关的计算密集型算子，包括三种基础计算单元：Cube（矩阵）计算单元、Vector（向量）计算单元和Scalar（标量）计算单元，同时还包含存储单元（包括硬件存储和用于数据搬运的搬运单元）和控制单元。</p>
+</blockquote>
+<ul>
+<li>耦合架构</li>
+</ul>
+<p><img src="image-2.png" alt="alt text" /></p>
+<ul>
+<li>分离架构</li>
+</ul>
+<p><img src="image-3.png" alt="alt text" /></p>
+<blockquote>
+<p>在AI Core中，输入缓冲区之后设置了一个存储转换单元（Memory Transfer Unit，MTE）。这是达芬奇架构的特色之一，主要的目的是为了以极高的效率实现数据格式的转换。比如前面提到GPU要通过矩阵计算来实现卷积，首先要通过Im2Col的方法把输入的网络和特征数据重新以一定的格式排列起来。这一步在GPU当中是通过软件来实现的，效率比较低下。达芬奇架构采用了一个专用的存储转换单元来完成这一过程，将这一步完全固化在硬件电路中，可以在很短的时间之内完成整个转置过程。</p>
+</blockquote>
+<p>这样看，专用硬件上的卷积加速算是走到头了，欸</p>
+<h2 id="bisheng-Test">bisheng Test</h2>
+<p>测试代码如下：</p>
+
+<pre class="language-c"><code class="language-c">// 文件名QuickStartDemo.cce
+#include &quot;acl/acl.h&quot;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#ifdef ASCENDC_CPU_DEBUG
+#define __aicore__
+#else
+#define __aicore__ [aicore]
+#endif
+
+#define BLOCKS 4
+#define CACHELINE_SZ 64
+
+// Define a kernel
+__global__ __aicore__ void foo(__gm__ uint8_t *Out, int Stride) {
+    Out[block_idx * Stride] = block_idx;
+}
+
+int main(int argc, char *argv[]) {
+    aclInit(nullptr);
+    aclrtSetDevice(0);
+    aclrtStream stream;
+    aclrtCreateStream(&amp;stream);
+
+    uint8_t ExpectedValue[] = {0, 1, 2, 3};
+    uint8_t *OutputValue = nullptr;
+    aclrtMalloc((void **)&amp;OutputValue, BLOCKS, ACL_MEM_MALLOC_HUGE_FIRST);
+
+    uint8_t InitValue[BLOCKS] = {0};
+    aclrtMemcpyAsync((void *)OutputValue, sizeof(InitValue), InitValue,
+                     sizeof(InitValue), ACL_MEMCPY_HOST_TO_DEVICE, stream);
+    aclrtSynchronizeStream(stream);
+
+    // Invoke a kernel
+    foo&lt;&lt;&lt;BLOCKS, nullptr, stream&gt;&gt;&gt;(OutputValue, CACHELINE_SZ);
+
+    uint8_t *OutHost = nullptr;
+    aclrtMallocHost((void **)&amp;OutHost, BLOCKS * CACHELINE_SZ);
+    aclrtMemcpyAsync(OutHost, BLOCKS * CACHELINE_SZ, OutputValue,
+                     BLOCKS * CACHELINE_SZ, ACL_MEMCPY_DEVICE_TO_HOST, stream);
+    aclrtSynchronizeStream(stream);
+
+    for (int I = 0; I &lt; sizeof(ExpectedValue) / sizeof(uint8_t); I++) {
+        printf(&quot;i%d\t Expect: 0x%04x\t\t\t\tResult: 0x%04x\n&quot;, I, ExpectedValue[I],
+                OutHost[I * CACHELINE_SZ]);
+    }
+
+    aclrtFreeHost(OutHost);
+    aclrtFree(OutputValue);
+
+    aclrtDestroyStream(stream);
+    aclrtResetDevice(0);
+    aclFinalize();
+    return 0;
+}
+</code></pre>
+<p>如果你对上面直接使用</p>
+<p><code>bisheng -O2 --cce-soc-version=AscendXXXYY --cce-soc-core-type=VecCore -I$RT_INC -L$RT_LIB -lascendcl -lruntime QuickStartDemo.cce -o QuickStartDemo</code></p>
+<p>会告诉你架构不支持Ascend910B</p>
+<p>但是，如果使用官方提供的脚本是可以编译通过的，那我们知道官方示例代码中存在异构代码，因此不可能使用gnu标准的gcc编译器，只有可能使用bisheng。</p>
+<p>那我们通过编译官方示例，并查看对应的异构代码的编译命令</p>
+<p>进入build目录执行</p>
+<p><code>make VERBOSE=1 | grep add_custom.cpp</code></p>
+<p><img src="image-4.png" alt="alt text" /></p>
+<p>找到编译器实际路径，我们再使用该路径编译器编译代码</p>
+<p>还是架构不支持</p>
+<p>测试以下编译指令</p>
+
+<pre class="language-makefile"><code class="language-makefile">cc1:=/usr/local/Ascend/ascend-toolkit/latest/compiler/ccec_compiler/bin/bisheng
+cc2:=/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/bisheng
+
+all:
+    $(cc2) \
+    -I/usr/local/Ascend/ascend-toolkit/latest/runtime/include \
+    -L/usr/local/Ascend/ascend-toolkit/latest/runtime/lib64 -g \
+    -O2 \
+    --cce-soc-version=Ascend310P1 --cce-soc-core-type=AICore \
+    -o QuickStartDemo.o \
+    QuickStartDemo.cce 
+</code></pre>
+<p>使用310P1架构与AICore类型交叉编译，出现链接错误</p>
+<p><img src="image-5.png" alt="alt text" /></p>
+<p>推测当前的编译器仅支持编译算子，并不支持编译为可执行文件（欸，懒得骂了）</p>
+<h2 id="kernel%E7%AE%97%E5%AD%90%E5%BC%80%E5%8F%91%28%E7%9F%A9%E9%98%B5%E4%B9%98%29">kernel算子开发(矩阵乘)</h2>
+<h3 id="%E7%BC%96%E8%AF%91">编译</h3>
+<p>clone算子example，然后执行sudo bash run.sh -r npu -v Ascend910B</p>
+<h3 id="%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F">编程范式</h3>
+<p>对于矩阵乘，其运算api为<a href="https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/800alpha001/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0016.html?sub_id=%2Fzh%2FCANNCommunityEdition%2F800alpha001%2Fapiref%2Fascendcopapi%2Fatlasascendc_api_07_0239.html#ZH-CN_TOPIC_0000002082776405__section8213173433312"  target="_blank">Mmad</a>，但是要执行该操作，需要内存中的数据满足zz的格式。</p>
+<p><img src="image-6.png" alt="范式" /></p>
+<p>上面是cube的运算流程，使用copyin，compute，copyout的运算流程，核函数中也遵循该流程。</p>
+<p>更详细的流程是，先将输入矩阵传入A1，B1，如下：<br />
+<img src="image-7.png" alt="alt text" /></p>
+<p>接着将矩阵分块后存入A2，B2，如下:<br />
+<img src="image-8.png" alt="alt text" /></p>
+<p>然后进行矩阵运算，<a href="https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/800alpha001/devguide/opdevg/ascendcopdevg/atlas_ascendc_10_0016.html?sub_id=%2Fzh%2FCANNCommunityEdition%2F800alpha001%2Fapiref%2Fascendcopapi%2Fatlasascendc_api_07_0239.html#ZH-CN_TOPIC_0000002082776405__section8213173433312"  target="_blank">Mmad</a>，再将结果输出到CO1，将分块后的结果融合成最终结果，然后存入CO1。</p>
+<p>A2与B2内数据格式如下：</p>
+<p><img src="image-12.png" alt="alt text" /></p>
+<p>需要注意的是以上流程中的数据搬运都是通过队列排队实现，这样才能够实现流水线的效果。</p>
+<p><img src="image-13.png" alt="alt text" /></p>
+<p>按照上图中的代码，即可实现流水，从逻辑上看，datacopy的工作必然由一个独立单元mte负责，mte与compute单元并行执行才能达到流水的目的。</p>
+<p>假证也可推理，即，如果上述代码是串行执行，那么没必要使用queue，直接使用转置后的数据即可。</p>
+<p>下面两图协同证明,datacopy任务指令序列在搬运单元中执行，搬运完后执行了setflag通知计算单元：<br />
+<img src="image-15.png" alt="alt text" /><br />
+<img src="image-14.png" alt="alt text" /></p>
+<h3 id="%E8%B0%83%E7%94%A8">调用</h3>
+<ul>
+<li>创建上下文</li>
+</ul>
+<p><img src="image-9.png" alt="alt text" /></p>
+<ul>
+<li>分配设备空间</li>
+</ul>
+<p><img src="image-10.png" alt="alt text" /></p>
+<ul>
+<li>调用内核函数</li>
+</ul>
+<p><img src="image-11.png" alt="alt text" /></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/tutorial/ascend/benchTest/index.html">
+                            <span class="icon"></span>
+                            <span class="label">benchTest</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/docs/tutorial/c++/fltk/index.html">
+                            <span class="label">cmake</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>
