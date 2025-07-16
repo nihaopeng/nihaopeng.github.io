@@ -42,8 +42,6 @@ items:
 -   label: c++
     items:
     -   label: cmake
-        file: c++/fltk/README.md
-    -   label: cmake
         file: c++/cmake/README.md
     -   label: makefile
         file: c++/makefile/readme.md
