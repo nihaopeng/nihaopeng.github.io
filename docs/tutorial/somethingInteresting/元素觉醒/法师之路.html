@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en"  class="">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>成为大魔法师！ - helloyutao</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                
+                    <h2>helloyutao</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class="active"><a  href="/docs/">docs</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">Search</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">Keywords separated by space</span>
+                                <span id="search_loading_hint">Loading, wait please ...</span>
+                                <span id="search_download_err_hint">Download error, please check network and refresh again</span>
+                                <span id="search_other_docs_result_hint">Result from other docs</span>
+                                <span id="search_curr_doc_result_hint">Result from current doc</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link"><a><span class="label">blkrv</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/quickstart/quickstart.html"><span class="label">quickstart</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">进阶</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/wrapper/index.html"><span class="label">wrapper</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/外设/index.html"><span class="label">外设</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/寄存器/index.html"><span class="label">寄存器</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/MMU/index.html"><span class="label">MMU</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/进阶/RIB-BUS/index.html"><span class="label">BUS</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">tools</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/fltk/fltk.html"><span class="label">fltk</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/no_translate.html?ref=blkrv/tools/riscv/riscv.html&from=/docs/tutorial/blkrv/tools/riscv/riscv.html"><span class="label">riscv交叉编译链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/verilator/verilator.html"><span class="label">verilator</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/blkrv/tools/mingw/mingw.html"><span class="label">mingw</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">linux</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/linux/frp/frp.html"><span class="label">frp</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/linux/service/service.html"><span class="label">service</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">ascend</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/problems/index.html"><span class="label">problems</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/benchTest/index.html"><span class="label">benchTest</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/ascend/mindspore_develop/index.html"><span class="label">kernel-devel</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">c++</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/c++/cmake/index.html"><span class="label">cmake</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/docs/tutorial/c++/makefile/index.html"><span class="label">makefile</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">python</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/docs/tutorial/python/pyside6/index.html"><span class="label">pyside6</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">somethingInteresting</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/docs/tutorial/somethingInteresting/officeAi/index.html"><span class="label">officeAi</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/docs/tutorial/somethingInteresting/元素觉醒/法师之路.html"><span class="label">元素觉醒</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>成为大魔法师！</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="Last modify date: 2025-08-04">
+                                    2025-08-04
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E5%BF%85%E8%AF%BB%EF%BC%89">基础知识（必读）</h2>
+<p>进游戏后按E键打开该界面</p>
+<p><img src="image.png" alt="alt text" /></p>
+<p>工作台：</p>
+<p>根据上面流程放置工作台后，通过以下流程生成物品</p>
+<p><img src="image-1.png" alt="alt text" /></p>
+<p><img src="image-2.png" alt="alt text" /></p>
+<p>tip1：<code>可以通过滑轮快速切换物品</code></p>
+<p>minecraft中所有的物品可以简要分为几类：建筑方块、功能方块，材料、装饰、植物、工具</p>
+<ul>
+<li><p>建筑方块：可以用于建造，仅有堆叠功能，提供建筑的基础材料，通过不同建筑方块搭建美观的建筑。可以通过材料进行合成，或者直接挖掘获得</p>
+</li>
+<li><p>功能方块：这些方块可以用来放置，当右键点击他们时，会触发不同的功能，例如箱子可以放置物品，床可以睡觉，工作台合成物品等。</p>
+</li>
+<li><p>材料：这类物品不可放置，但可以通过工作台合成不同的物品</p>
+</li>
+<li><p>装饰：这类物品可以放置，但唯一的作用仅用来装饰</p>
+</li>
+<li><p>植物：植物分为本体和种子，基本遵循自然规律，例如土豆、小麦的种子是他本身，而南瓜等作物的种子需要特殊方式获取。</p>
+</li>
+<li><p>工具：通过材料合成，具有攻击，功能性等作用，例如剑左键可以进行攻击，由木头剑，石剑，铁剑，钻石剑品阶依次增高。而其他工具例如锄头，右键点击草方块可以进行锄地以进行种植。挖掘石头等使用镐子效率更高，而木头等使用斧头效率更高。</p>
+</li>
+</ul>
+<p>元素觉醒整合包新增了部分其他物品，这里简要介绍重要的部分：</p>
+<ul>
+<li><p>法术类：包括法杖、法术书等，对应的法术物品可以增强相应的属性。</p>
+</li>
+<li><p>装备类：整合包提供了种类繁多的装备，同样可以增加对应的属性。</p>
+</li>
+<li><p>召唤，传送类：例如召唤珍珠可以召唤一个传送门，将会传送怪物到周围；地图方块，通过领域地图右键点击可以传送到对应的副本地图。</p>
+</li>
+</ul>
+<p>tip2：<code>完成第一章的伐木任务后会获得一个大背包，按B键可以打开背包空间，需要注意该空间无法外部直接访问，例如货币放置在该空间时，无法在商店购买物品，需要放置到外部背包</code></p>
+<p><img src="image-10.png" alt="alt text" /></p>
+<h2 id="%E5%85%B3%E4%BA%8E%E6%B3%95%E6%9C%AF">关于法术</h2>
+<h3 id="%E8%8E%B7%E5%8F%96%E4%B8%80%E4%B8%AA%E6%B3%95%E6%9C%AF">获取一个法术</h3>
+<p>首先右键点击<code>法术绑定台</code>，将一本书放置到左边，右边选取对应职业的法术书进行生成获取法术书。</p>
+<p><img src="image-3.png" alt="alt text" /></p>
+<p>再将法术书放到法术绑定台，再放入青金石绑定对应的法术。</p>
+<p><img src="image-4.png" alt="alt text" /></p>
+<p>此时鼠标放在法术书上，按ALT键将会看到法术书绑定的法术</p>
+<p><img src="image-5.png" alt="alt text" /></p>
+<p>打开个人界面，点击如下按钮打开装备界面，</p>
+<p><img src="image-6.png" alt="alt text" /></p>
+<p>将法术书放置到槽位</p>
+<p><img src="image-7.png" alt="alt text" /></p>
+<p>切换到武器，此时可以施放已绑定的法术，通过法术书绑定的法术只要是攻击性武器都可施放，但是法杖类武器具有相应的加成。</p>
+<p><img src="image-8.png" alt="alt text" /></p>
+<p>想要施放法术还需要对应的符文，符文制作可以使用工作台或者符文制作台，后者能产出更多的符文。将符文放置到背包格子即可。</p>
+<p><img src="image-9.png" alt="alt text" /></p>
+<h3 id="%E5%85%B6%E4%BB%96%E6%96%BD%E6%94%BE%E6%96%B9%E5%BC%8F">其他施放方式</h3>
+<ul>
+<li><p>切换到卷轴施放，例如火球术卷轴施放</p>
+</li>
+<li><p>法杖自带法术施放，例如闪电法杖自带<code>魂灵雷击</code>法术。</p>
+</li>
+</ul>
+<h3 id="%E4%B8%BB%E7%BA%BF">主线</h3>
+<p>打开任务界面，鼠标移到左侧三角形，完成对应的主线任务即可推进，同时获取整合包绝大部分的知识。</p>
+<p><img src="image-11.png" alt="alt text" /></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/docs/tutorial/somethingInteresting/officeAi/index.html">
+                            <span class="icon"></span>
+                            <span class="label">officeAi</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a></a><ul><li><a target="_blank" href="/#"></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc">Generated by teedoc</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+        <script type="text/javascript" src="/static/js/live.js"></script>
+    
+</body>
+
+</html>
