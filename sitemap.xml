@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-            <loc>https://nihaopeng.github.io/docs/references/ann/fusionANNS/fusionANNs.html</loc>
-            <lastmod>2025-07-08</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/ascend/benchTest/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/tutorial/ascend/hccl/index.html</loc>
+            <lastmod>2025-08-12</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/ascend/mindspore_develop/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/ascend/problems/index.html</loc>
-            <lastmod>2025-07-08</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/llm/SLO_PD_multiplex/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/moe/deepseekMoe/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
@@ -32,193 +32,115 @@
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/writing/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/moe/deepseekMoe/index.html</loc>
-            <lastmod>2025-07-08</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/moe/parallel_method/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/algorithms/transformer/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/ann/a_realtime_adaptive_multi_stream_GPU_system/adaptive_multi_stream.html</loc>
-            <lastmod>2025-07-08</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/ann/faastube/faastube.html</loc>
-            <lastmod>2025-07-08</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/projects/ascend_matrix/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/projects/ftp-design/ftp-cjc.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/projects/IntelligentAudioChat/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/MLAPO/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/pageAttention/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/RoPE/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/SLO_PD_multiplex/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/references/ann/second-Tier-memory/second-Tier-memory.html</loc>
-            <lastmod>2025-07-08</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/references/ascend/ascend_llm/index.html</loc>
-            <lastmod>2025-07-08</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/references/llm/APC/index.html</loc>
-            <lastmod>2025-07-08</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/deepspeed_llm/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/moe/parallel_method/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/flashAttention/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/references/llm/MLA/index.html</loc>
-            <lastmod>2025-07-16</lastmod>
+            <loc>https://nihaopeng.github.io/docs/tutorial/ascend/benchTest/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/linux/dev_tree/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/algorithms/transformer/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/linux/frp/frp.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/ann/a_realtime_adaptive_multi_stream_GPU_system/adaptive_multi_stream.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/linux/service/service.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/ann/faastube/faastube.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/llm/vllm/index.html</loc>
-            <lastmod>2025-07-22</lastmod>
+            <loc>https://nihaopeng.github.io/docs/references/ann/fusionANNS/fusionANNs.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/python/pyside6/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/projects/ascend_matrix/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/projects/ftp-design/ftp-cjc.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://nihaopeng.github.io/docs/tutorial/somethingInteresting/officeAi/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <loc>https://nihaopeng.github.io/docs/projects/IntelligentAudioChat/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/projects/index.html</loc>
-            <lastmod>2025-07-08</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/projects/riscv-telechat-openeuler/openeuler/openeuler.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/projects/riscv-telechat-openeuler/telechat移植/telechat.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/projects/sd1.5-fine-tuning/sd.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/projects/tinytodo/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
@@ -230,19 +152,109 @@
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/references/algorithms/ann/ann.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/references/algorithms/moe/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/deepspeed_llm/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/flashAttention/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/MLA/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/MLAPO/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/pageAttention/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/references/llm/RoPE/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/linux/dev_tree/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/linux/frp/frp.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/linux/service/service.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/linux/user_manage/index.html</loc>
+            <lastmod>2025-08-09</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/llm/vllm/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/python/pyside6/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/somethingInteresting/officeAi/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://nihaopeng.github.io/docs/tutorial/ascend/problems/index.html</loc>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/quickstart/quickstart.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
@@ -254,73 +266,73 @@
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/tools/fltk/fltk.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/tools/mingw/mingw.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/tools/riscv-elf-unknown-gcc/gcc.html</loc>
-            <lastmod>2025-06-02</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/tools/verilator/verilator.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/进阶/MMU/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/进阶/RIB-BUS/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/进阶/wrapper/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/进阶/外设/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/blkrv/进阶/寄存器/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/c++/cmake/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/c++/fltk/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://nihaopeng.github.io/docs/tutorial/c++/makefile/index.html</loc>
-            <lastmod>2025-05-31</lastmod>
+            <lastmod>2025-08-04</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
