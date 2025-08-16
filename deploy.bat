@@ -7,7 +7,7 @@ set "REMOTE_URL=https://github.com/nihaopeng/nihaopeng.github.io.git"  rem 替�
 set "COMMIT_MSG=commit"                rem 自定义提交信息
 set "BRANCH=master"                       rem 指定分支名称(main/master)
 set "SRC_BRANCH=src"
-set "VIR_SCRIPT_DIR=./.venv/Scripts/"
+set "VIR_SCRIPT_DIR=.\.venv\Scripts\"
 rem =======================
 
 echo 构建内容中
@@ -15,11 +15,11 @@ echo 构建内容中
 
 echo 正在初始化Git仓库...
 cd /d "%TARGET_DIR%"
-git init
-if errorlevel 1 (
-    echo 错误: Git初始化失败
-    exit /b 1
-)
+@REM git init
+@REM if errorlevel 1 (
+@REM     echo 错误: Git初始化失败
+@REM     exit /b 1
+@REM )
 
 echo 添加所有文件到暂存区...
 git add .
@@ -35,12 +35,12 @@ if errorlevel 1 (
 )
 
 echo 绑定远程仓库...
-git remote remove origin 2>nul
-git remote add origin "%REMOTE_URL%"
-if errorlevel 1 (
-    echo 错误: 远程仓库绑定失败
-    exit /b 1
-)
+@REM git remote remove origin 2>nul
+@REM git remote add origin "%REMOTE_URL%"
+@REM if errorlevel 1 (
+@REM     echo 错误: 远程仓库绑定失败
+@REM     exit /b 1
+@REM )
 
 echo 强制推送到远程仓库(%BRANCH%分支)...
 git push --force origin %BRANCH%
@@ -65,7 +65,7 @@ if errorlevel 1 (
     echo 警告: 提交失败(可能是空仓库或无新文件)
 )
 
-echo 强制推送到远程仓库(%SRC_BRANCH%分支)...
+echo 推送到远程仓库(%SRC_BRANCH%分支)...
 git push origin %SRC_BRANCH%
 if errorlevel 1 (
     echo 错误: 推送失败

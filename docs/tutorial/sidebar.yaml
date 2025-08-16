@@ -31,6 +31,8 @@ items:
         file: linux/frp/frp.md
     -   label: service
         file: linux/service/service.md
+    -   label: 用户管理
+        file: linux/user_manage/README.md
 -   label: ascend
     items:
     -   label: problems
