@@ -1,0 +1,17 @@
+items:
+-   label: ascend_matrix
+    file: ascend_matrix/readme.md
+-   label: ftp-design
+    file: ftp-design/ftp-cjc.md
+-   label: IntelligentAudioChat
+    file: IntelligentAudioChat/README.md
+-   label: riscv-telechat-openeuler
+    items:
+    -   label: openeuler
+        file: riscv-telechat-openeuler/openeuler/openeuler.md
+    -   label: telechat移植
+        file: riscv-telechat-openeuler/telechat移植/telechat.md
+-   label: sd1.5-fine-tuning
+    file: sd1.5-fine-tuning/sd.md
+-   label: tinytodo
+    file: tinytodo/readme.md

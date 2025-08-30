@@ -1,0 +1,55 @@
+items:
+-   label: algorithms
+    items:
+    -   label: ANN
+        file: algorithms/ann/ann.md
+    -   label: moe
+        file: algorithms/moe/readme.md
+    -   label: transformer
+        file: algorithms/transformer/readme.md
+-   label: ann
+    items: 
+    -   label: faastube
+        file: ann/faastube/faastube.md
+    -   label: fusionANNS
+        file: ann/fusionANNS/fusionANNs.md
+    -   label: second-Tier-memory
+        file: ann/second-Tier-memory/second-Tier-memory.md
+    -   label: adaptive_multi_stream
+        file: ann/a_realtime_adaptive_multi_stream_GPU_system/adaptive_multi_stream.md
+    -   label: runmmy
+        file: ann/runmmy/runmmy.md
+-   label: llm
+    items:
+    -   label: APC
+        file: llm/APC/README.md
+    -   label: deepspeed_llm
+        file: llm/deepspeed_llm/README.md
+    -   label: flashAttention
+        file: llm/flashAttention/README.md
+    -   label: MLA
+        file: llm/MLA/README.md
+    -   label: MLAPO
+        file: llm/MLAPO/README.md
+    -   label: pageAttention
+        file: llm/pageAttention/README.md
+    -   label: RoPE
+        file: llm/RoPE/README.md
+    -   label: SLO_PD_multiplex
+        file: llm/SLO_PD_multiplex/README.md
+-   label: moe
+    items:
+    -   label: Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts
+        file: moe/Learning_Factored_Representations_in_a_Deep_Mixture_of_Experts/README.md
+    -   label: deepseek Moe
+        file: moe/deepseekMoe/readme.md
+    -   label: moe_parallel_method
+        file: moe/parallel_method/readme.md
+-   label: ascend
+    items:
+    -   label: ascend_llm
+        file: ascend/ascend_llm/README.md
+-   label: llm
+    items:
+    -   label: APC
+        file: llm/APC/README.md
