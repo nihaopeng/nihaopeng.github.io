@@ -57,3 +57,5 @@ items:
         file: somethingInteresting/officeAi/README.md
     -   label: 元素觉醒
         file: somethingInteresting/元素觉醒/法师之路.md
+    -   label: ipv6proxy
+        file: somethingInteresting/ipv6proxy/README.md
